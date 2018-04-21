@@ -11,6 +11,7 @@ var streak = 0
 
 func _ready():
 	$"arrow_timer".connect("timeout", self, "_on_arrowtimer_timeout")
+	print(environment.project_resolution.x)
 	
 func proces_key_stroke(action):
 	var overlapping_areas = $"Target area".get_overlapping_areas()
@@ -35,7 +36,7 @@ func _input(event):
 	elif Input.is_action_just_pressed("ui_down"):
 		processed = proces_key_stroke("ui_down")
 	
-	if event.is_pressed() && !processed:
+	if event.is_pressed() and !Input.is_action_just_pressed("accelerate") and !Input.is_action_just_pressed("decelerate") and !Input.is_action_just_pressed("steer_left") and !Input.is_action_just_pressed("steer_right") and !processed:
 		print("wrong  input")
 		emit_signal("wrong_input")
 		set_streak(0)
@@ -48,7 +49,7 @@ func _on_arrowtimer_timeout():
 	var new_arrow = arrow_class.instance()
 	
 	# Initiate arrow
-	new_arrow.init(randi()%4, Vector2(20,20))
+	new_arrow.init(randi()%4, Vector2(-20,30))
 	new_arrow.connect("missed_arrow", self, "_on_arrow_missed_arrow")
 	
 	add_child(new_arrow)

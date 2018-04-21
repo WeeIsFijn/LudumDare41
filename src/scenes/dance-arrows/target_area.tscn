@@ -1,14 +1,30 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://scenes/dance-arrows/target_area.gd" type="Script" id=1]
 [ext_resource path="res://assets/imgs/arrows/target.png" type="Texture" id=2]
 
+[sub_resource type="Shader" id=2]
+
+code = "shader_type canvas_item;
+
+void fragment(){
+	vec4 col = tex(TEXTURE,UV);
+	COLOR = col;	
+}"
+_sections_unfolded = [ "Resource" ]
+
+[sub_resource type="ShaderMaterial" id=3]
+
+render_priority = 0
+shader = SubResource( 2 )
+_sections_unfolded = [ "Resource" ]
+
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 20.0899, 19.8346 )
+extents = Vector2( 19.9823, 19.9496 )
 
-[node name="Target area" type="Area2D" index="0" groups=[
+[node name="Target area" type="Area2D" groups=[
 "arrow_target",
 ]]
 
@@ -20,17 +36,19 @@ angular_damp = 1.0
 audio_bus_override = false
 audio_bus_name = "Master"
 script = ExtResource( 1 )
+_sections_unfolded = [ "Material" ]
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
-position = Vector2( -0.144888, 0.115982 )
-scale = Vector2( 0.265209, 0.26521 )
+material = SubResource( 3 )
+position = Vector2( -0.0402126, 0.115982 )
+scale = Vector2( 0.265209, 0.265209 )
 texture = ExtResource( 2 )
-_sections_unfolded = [ "Animation", "Offset", "Region", "Transform" ]
+_sections_unfolded = [ "Animation", "Material", "Offset", "Region", "Transform" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 
-position = Vector2( -0.231964, 0.231966 )
+position = Vector2( -0.022625, 0.127293 )
 shape = SubResource( 1 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 

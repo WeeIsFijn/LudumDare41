@@ -3,7 +3,6 @@
 [ext_resource path="res://scenes/dance-arrows/arrow.gd" type="Script" id=1]
 [ext_resource path="res://assets/imgs/arrows/plain_arrow.png" type="Texture" id=2]
 
-
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
@@ -30,7 +29,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 2, 2 ), Vector2( 3, 3 ) ]
+"values": [ Vector2( 0.213521, 0.213521 ), Vector2( 0.6, 0.6 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Sprite:visible")
@@ -61,6 +60,7 @@ tracks/2/keys = {
 "arrow",
 ]]
 
+position = Vector2( 0.0694427, 0 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -77,7 +77,8 @@ shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="." index="1"]
 
-scale = Vector2( 2, 2 )
+position = Vector2( 1.78814e-07, 0 )
+scale = Vector2( 0.214528, 0.214528 )
 texture = ExtResource( 2 )
 normal_map = SubResource( 2 )
 _sections_unfolded = [ "Material", "Transform", "Visibility", "Z Index" ]
