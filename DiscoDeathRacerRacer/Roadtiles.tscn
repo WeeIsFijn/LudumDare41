@@ -1,0 +1,43 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Road/road_asphalt01.png" type="Texture" id=1]
+[ext_resource path="res://Road/road_asphalt02.png" type="Texture" id=2]
+[ext_resource path="res://Road/road_asphalt03.png" type="Texture" id=3]
+[ext_resource path="res://Road/road_asphalt05.png" type="Texture" id=4]
+[ext_resource path="res://Road/road_asphalt41.png" type="Texture" id=5]
+[ext_resource path="res://Road/road_asphalt39.png" type="Texture" id=6]
+
+[node name="TileSetRoot" type="Node2D"]
+
+[node name="Asphalt_vertical" type="Sprite" parent="." index="0"]
+
+position = Vector2( 64, 64 )
+texture = ExtResource( 1 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Asphalt_horizontal" type="Sprite" parent="." index="1"]
+
+position = Vector2( 320, 64 )
+texture = ExtResource( 2 )
+
+[node name="Asphalt_corner_topleft" type="Sprite" parent="." index="2"]
+
+position = Vector2( 64, 320 )
+texture = ExtResource( 3 )
+
+[node name="Asphalt_corner_topright" type="Sprite" parent="." index="3"]
+
+position = Vector2( 320, 320 )
+texture = ExtResource( 4 )
+
+[node name="Asphalt_corner_bottomright" type="Sprite" parent="." index="4"]
+
+position = Vector2( 320, 576 )
+texture = ExtResource( 5 )
+
+[node name="Asphalt_corner_bottomleft" type="Sprite" parent="." index="5"]
+
+position = Vector2( 64, 576 )
+texture = ExtResource( 6 )
+
+

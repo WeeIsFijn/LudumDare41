@@ -1,0 +1,40 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://PlayerCar.gd" type="Script" id=1]
+[ext_resource path="res://car_red_1.png" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 14.8262, 25.0487 )
+
+[node name="CarRoot" type="KinematicBody2D"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+collision/safe_margin = 0.08
+script = ExtResource( 1 )
+MAX_SPEED = 300
+ACCELERATION = 200
+ACCELERATION_BREAK = 500
+INVERSE_ROTATION_RADIUS = 1
+
+[node name="Sprite" type="Sprite" parent="." index="0"]
+
+texture = ExtResource( 2 )
+
+[node name="KinematicBody2D" type="KinematicBody2D" parent="." index="1"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+collision/safe_margin = 0.08
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="2"]
+
+position = Vector2( -0.392838, -0.15831 )
+scale = Vector2( 2.38, 2.58 )
+shape = SubResource( 1 )
+
+

@@ -1,0 +1,70 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://RoadTiles.tres" type="TileSet" id=1]
+[ext_resource path="res://Car.tscn" type="PackedScene" id=2]
+[ext_resource path="res://PlayerCamera.gd" type="Script" id=3]
+
+[node name="WorldRoot" type="Node2D" index="0"]
+
+[node name="TileMap" type="TileMap" parent="." index="0"]
+
+scale = Vector2( 3, 3 )
+mode = 0
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 64, 64 )
+cell_quadrant_size = 16
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = false
+cell_clip_uv = false
+collision_use_kinematic = false
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 1
+collision_mask = 1
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray( -196605, 2, 0, -196603, 1, 0, -196601, 3, 0, -65533, 0, 0, -65529, 0, 0, 65539, 0, 0, 65543, 0, 0, 196611, 0, 0, 196615, 5, 0, 196617, 1, 0, 196619, 3, 0, 327683, 0, 0, 327691, 5, 0, 327693, 3, 0, 458755, 5, 0, 458757, 1, 0, 458759, 1, 0, 458761, 1, 0, 458763, 1, 0, 458765, 4, 0 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="CarRoot" parent="." index="1" instance=ExtResource( 2 )]
+
+position = Vector2( 763.882, 342.773 )
+MAX_SPEED = 700
+MAX_SPEED_REVERSE = 50
+ACCELERATION = 400
+ACCELERATION_REVERSE = 20
+ACCELERATION_DRAG = 200
+INVERSE_ROTATION_RADIUS = 2.5
+DRIFT_SPEED_START = 600
+DRIFT_SPEED_STOP = 500
+
+[node name="Camera2D" type="Camera2D" parent="CarRoot" index="1"]
+
+anchor_mode = 1
+rotating = false
+current = true
+zoom = Vector2( 1, 1 )
+limit_left = -10000000
+limit_top = -10000000
+limit_right = 10000000
+limit_bottom = 10000000
+limit_smoothed = false
+drag_margin_h_enabled = true
+drag_margin_v_enabled = true
+smoothing_enabled = false
+smoothing_speed = 5.0
+offset_v = 0.0
+offset_h = 0.0
+drag_margin_left = 0.0
+drag_margin_top = 0.0
+drag_margin_right = 0.0
+drag_margin_bottom = 0.0
+editor_draw_screen = true
+editor_draw_limits = true
+editor_draw_drag_margin = true
+script = ExtResource( 3 )
+_sections_unfolded = [ "Drag Margin", "Editor", "Limit", "Offset" ]
+
+
