@@ -7,7 +7,7 @@
 [ext_resource path="res://scenes/dance-arrows/dance-root.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/UI.tscn" type="PackedScene" id=6]
 
-[node name="WorldRoot" type="Node2D"]
+[node name="WorldRoot" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 
