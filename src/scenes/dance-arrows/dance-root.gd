@@ -25,6 +25,7 @@ func proces_key_stroke(action):
 			set_streak(streak + 1)
 			emit_signal("hit")
 			HitSuccessAudio.play()
+			arrows.remove(arrows.find(area))
 			return true
 	
 	return false
@@ -54,6 +55,8 @@ func _on_arrowtimer_timeout():
 	# Initiate arrow
 	new_arrow.init(randi()%4, Vector2(-5,60))
 	new_arrow.connect("missed_arrow", self, "_on_arrow_missed_arrow")
+	new_arrow.connect("selfdestroy", self, "remove_arrow")
+	
 	
 	arrows.append(new_arrow)
 	add_child(new_arrow)
@@ -75,6 +78,9 @@ func remove_arrows():
 		if (wr.get_ref()):
 			arrow.queue_free()
 	arrows = []
+	
+func remove_arrow(arrow):
+	arrows.remove(arrows.find(arrow))
 	
 func stop():
 	remove_arrows()

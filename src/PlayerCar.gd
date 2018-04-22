@@ -91,7 +91,8 @@ func _process(delta):
 	if (turning_time > 0.3):
 		effective_velocity.x = velocity.y * sin(DRIFT_UNDERSTEER_FACTOR / powerup_multiplier)
 		effective_velocity.y = velocity.y * cos(DRIFT_UNDERSTEER_FACTOR / powerup_multiplier)
-		emit_signal("start_drift", 1 if effective_velocity.x > 0 else 0)
+		print(effective_velocity.x)
+		emit_signal("start_drift", 0 if rotation_velocity > 0 else 1)
 		rotation_velocity *= DRIFT_ROTATION_FACTOR
 	
 	velocity.x = effective_velocity.x
