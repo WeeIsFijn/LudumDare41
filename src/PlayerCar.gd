@@ -10,7 +10,7 @@ onready var AccelerateAudio = $AccelerateAudio
 onready var DriftAudio = $DriftAudio
 onready var IdleAudio = $IdleAudio
 
-export (int) var MAX_SPEED = 1200
+export (int) var MAX_SPEED = 1400
 export (int) var MAX_SPEED_REVERSE = 500
 export (int) var ACCELERATION = 1500
 export (int) var ACCELERATION_BREAK = 2000
