@@ -15,6 +15,8 @@ onready var next_track_timer = $"Next_track_timer"
 
 onready var music_player = $"MusicPlayer"
 
+onready var popup = $"CarRoot/UI/Popup"
+
 var current_track = 1
 onready var current_track_node = $"Track_container/Track1"
 var tracks = [preload("res://scenes/tracks/track01.tscn"), preload("res://scenes/tracks/track02.tscn")]
@@ -44,13 +46,13 @@ func _ready():
 	player.connect("died", dance, "reset")
 	player.connect("died", LapController, "_on_player_death")
 	
-	next_track_timer.connect("timeout", self, "_on_next_track_timeout")
+	popup.connect("clicked", self, "_on_popup_clicked")
 
 	reset()
 	set_positions()
 	LapController.countdown_and_start_lap()
 	
-func _on_next_track_timeout():
+func _on_popup_clicked():
 	current_track += 1
 	load_track(current_track)
 	
@@ -81,7 +83,9 @@ func _on_lap_did_start():
 	
 func _on_track_finished():
 	car.stop_engine()
-	next_track_timer.start()
+	
+	popup.show_popup(LapController.lap_times, LapController.total_time)
+	
 	dance.stop()
 	
 	music_player.lower_volume()

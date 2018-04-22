@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://WorldRoot.gd" type="Script" id=1]
 [ext_resource path="res://scenes/PowerUpManager.tscn" type="PackedScene" id=2]
@@ -8,7 +8,8 @@
 [ext_resource path="res://PlayerCamera.gd" type="Script" id=6]
 [ext_resource path="res://scenes/dance-arrows/dance-root.tscn" type="PackedScene" id=7]
 [ext_resource path="res://scenes/UI.tscn" type="PackedScene" id=8]
-[ext_resource path="res://scripts/AudioStreamPlayer.gd" type="Script" id=9]
+[ext_resource path="res://scenes/Popup.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scripts/AudioStreamPlayer.gd" type="Script" id=10]
 
 [sub_resource type="Animation" id=1]
 
@@ -137,7 +138,7 @@ tracks/0/keys = {
 "values": [ Vector2( 3.75, 3.75 ), Vector2( 4, 4 ) ]
 }
 
-[node name="WorldRoot" type="Node2D" index="0"]
+[node name="WorldRoot" type="Node2D"]
 
 script = ExtResource( 1 )
 
@@ -218,6 +219,12 @@ blend_times = [  ]
 
 [node name="UI" parent="CarRoot" index="5" instance=ExtResource( 8 )]
 
+[node name="Popup" parent="CarRoot/UI" index="14" instance=ExtResource( 9 )]
+
+visible = false
+position = Vector2( 112.368, 155.398 )
+scale = Vector2( 2.00332, 1.81759 )
+
 [node name="Next_track_timer" type="Timer" parent="." index="4"]
 
 process_mode = 1
@@ -232,7 +239,7 @@ volume_db = 0.0
 autoplay = true
 mix_target = 0
 bus = "Master"
-script = ExtResource( 9 )
+script = ExtResource( 10 )
 
 
 [editable path="LapController"]
