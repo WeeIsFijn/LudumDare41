@@ -30,8 +30,8 @@ func init(direction, pos):
 func _process(delta):
 	set_position(position + Vector2(SPEED * delta, 0))
 	
-	if position.x > environment.project_resolution.x:
-		queue_free()
+	# if position.x > environment.project_resolution.x:
+		# queue_free()
 		
 	# If the arrow was over the target and now it is not, than the player missed the arrow
 	if over_target:

@@ -2,7 +2,7 @@
 
 [ext_resource path="res://TileSet.tres" type="TileSet" id=1]
 
-[node name="Track" type="Node2D" index="0"]
+[node name="Track" type="Node2D"]
 
 [node name="Spawn" type="Node2D" parent="." index="0"]
 

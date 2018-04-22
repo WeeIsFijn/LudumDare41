@@ -147,6 +147,14 @@ script = ExtResource( 1 )
 
 editor/display_folded = true
 
+[node name="Finish" parent="LapController" index="2"]
+
+position = Vector2( 1152.81, 2759.4 )
+
+[node name="Checkpoint" parent="LapController" index="3"]
+
+position = Vector2( 1135.27, 2168.9 )
+
 [node name="Track_container" type="Node2D" parent="." index="2"]
 
 _sections_unfolded = [ "Transform" ]
@@ -227,3 +235,4 @@ bus = "Master"
 script = ExtResource( 9 )
 
 
+[editable path="LapController"]
