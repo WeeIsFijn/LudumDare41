@@ -158,17 +158,20 @@ position = Vector2( 1135.27, 2168.9 )
 
 [node name="Track_container" type="Node2D" parent="." index="2"]
 
+scale = Vector2( 0.125, 0.125 )
+_sections_unfolded = [ "Transform" ]
+
 [node name="Track1" parent="Track_container" index="0" instance=ExtResource( 4 )]
 
 [node name="CarRoot" parent="." index="3" instance=ExtResource( 5 )]
 
-editor/display_folded = true
 position = Vector2( 1588.8, 747.14 )
 MAX_SPEED = 1200
 ACCELERATION = 1500
 
 [node name="Camera2D" type="Camera2D" parent="CarRoot" index="1"]
 
+editor/display_folded = true
 anchor_mode = 1
 rotating = false
 current = true

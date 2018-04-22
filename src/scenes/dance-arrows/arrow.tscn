@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://scenes/dance-arrows/arrow.gd" type="Script" id=1]
-[ext_resource path="res://assets/imgs/arrows/plain_arrow.png" type="Texture" id=2]
+[ext_resource path="res://assets/imgs/arrows/Arrow.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -73,12 +73,14 @@ SPEED = 180
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
 
+position = Vector2( -0.0400495, 0.0527468 )
+scale = Vector2( 0.81382, 0.81382 )
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="." index="1"]
 
-position = Vector2( 1.78814e-07, 0 )
-scale = Vector2( 0.214528, 0.214528 )
+position = Vector2( 0.0114975, 0.0370026 )
+scale = Vector2( 0.0253021, 0.0253021 )
 texture = ExtResource( 2 )
 normal_map = SubResource( 2 )
 _sections_unfolded = [ "Material", "Transform", "Visibility", "Z Index" ]

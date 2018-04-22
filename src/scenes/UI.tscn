@@ -1,12 +1,13 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://scenes/UI.gd" type="Script" id=1]
-[ext_resource path="res://assets/fonts/Starbirl.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://assets/fonts/Lightman Pixel.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://scenes/LapTimer.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/imgs/dancedanceui.png" type="Texture" id=4]
 
 [sub_resource type="DynamicFont" id=1]
 
-size = 30
+size = 15
 use_mipmaps = false
 use_filter = false
 font_data = ExtResource( 2 )
@@ -44,13 +45,13 @@ tracks/1/keys = {
 
 [sub_resource type="DynamicFont" id=3]
 
-size = 20
+size = 30
 use_mipmaps = false
 use_filter = false
 font_data = ExtResource( 2 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[node name="UI" type="CanvasLayer"]
+[node name="UI" type="CanvasLayer" index="0"]
 
 layer = 1
 offset = Vector2( 0, 0 )
@@ -66,10 +67,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 719.0
-margin_top = 67.0
-margin_right = 953.0
-margin_bottom = 100.0
+margin_left = 327.0
+margin_top = 19.0
+margin_right = 561.0
+margin_bottom = 52.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
@@ -77,11 +78,13 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
 custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 1, 0.67451, 0.929412, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = "Streak:"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
-_sections_unfolded = [ "custom_fonts" ]
+_sections_unfolded = [ "custom_colors", "custom_fonts" ]
 
 [node name="streak-label-content" type="Label" parent="." index="1"]
 
@@ -89,10 +92,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 720.0
-margin_top = 107.0
-margin_right = 954.0
-margin_bottom = 140.0
+margin_left = 441.0
+margin_top = 20.0
+margin_right = 675.0
+margin_bottom = 53.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
@@ -100,11 +103,13 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
 custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 1, 0.67451, 0.929412, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = "0"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
-_sections_unfolded = [ "custom_fonts" ]
+_sections_unfolded = [ "custom_colors", "custom_fonts" ]
 
 [node name="lap-label" type="Label" parent="." index="2"]
 
@@ -112,10 +117,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 720.0
-margin_top = 138.0
-margin_right = 954.0
-margin_bottom = 171.0
+margin_left = 553.0
+margin_top = 78.0
+margin_right = 787.0
+margin_bottom = 111.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
@@ -123,6 +128,8 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
 custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 1, 0.67451, 0.929412, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = "Lap"
 percent_visible = 1.0
 lines_skipped = 0
@@ -135,10 +142,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 721.0
-margin_top = 182.0
-margin_right = 955.0
-margin_bottom = 215.0
+margin_left = 615.0
+margin_top = 79.0
+margin_right = 849.0
+margin_bottom = 112.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
@@ -146,6 +153,8 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
 custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 1, 0.67451, 0.929412, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = "1 / 3"
 percent_visible = 1.0
 lines_skipped = 0
@@ -158,10 +167,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 718.0
-margin_top = 218.0
-margin_right = 952.0
-margin_bottom = 251.0
+margin_left = 551.0
+margin_top = 19.0
+margin_right = 785.0
+margin_bottom = 52.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
@@ -169,6 +178,8 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
 custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 1, 0.67451, 0.929412, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = "Lap time:"
 percent_visible = 1.0
 lines_skipped = 0
@@ -181,10 +192,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 719.0
-margin_top = 262.0
-margin_right = 953.0
-margin_bottom = 295.0
+margin_left = 686.0
+margin_top = 20.0
+margin_right = 920.0
+margin_bottom = 53.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
@@ -192,6 +203,8 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
 custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 1, 0.67451, 0.929412, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = "0:0"
 percent_visible = 1.0
 lines_skipped = 0
@@ -204,10 +217,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 719.0
-margin_top = 297.0
-margin_right = 953.0
-margin_bottom = 330.0
+margin_left = 754.0
+margin_top = 20.0
+margin_right = 988.0
+margin_bottom = 53.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
@@ -227,10 +240,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 716.0
-margin_top = 334.0
-margin_right = 950.0
-margin_bottom = 367.0
+margin_left = 828.0
+margin_top = 20.0
+margin_right = 1062.0
+margin_bottom = 53.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
@@ -256,8 +269,7 @@ blend_times = [  ]
 
 [node name="Node2D" type="Node2D" parent="." index="9"]
 
-position = Vector2( 510.74, 265.192 )
-scale = Vector2( 3, 3 )
+position = Vector2( 510.74, 115.192 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="announcement" type="Label" parent="Node2D" index="0"]
@@ -278,12 +290,26 @@ size_flags_horizontal = 1
 size_flags_vertical = 4
 size_flags_stretch_ratio = 3.0
 custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Niets hihi"
 align = 1
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
+_sections_unfolded = [ "custom_colors", "custom_fonts" ]
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="LapTimer" parent="." index="10" instance=ExtResource( 3 )]
+
+[node name="Sprite" type="Sprite" parent="." index="11"]
+
+visible = false
+position = Vector2( 511.341, 524.252 )
+texture = ExtResource( 4 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 

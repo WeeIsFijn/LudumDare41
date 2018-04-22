@@ -48,7 +48,7 @@ func _on_arrowtimer_timeout():
 	var new_arrow = arrow_class.instance()
 	
 	# Initiate arrow
-	new_arrow.init(randi()%4, Vector2(-5,30))
+	new_arrow.init(randi()%4, Vector2(-5,60))
 	new_arrow.connect("missed_arrow", self, "_on_arrow_missed_arrow")
 	
 	arrows.append(new_arrow)

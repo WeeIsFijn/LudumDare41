@@ -9,7 +9,7 @@
 scale = Vector2( 6, 6 )
 mode = 0
 tile_set = ExtResource( 1 )
-cell_size = Vector2( 64, 64 )
+cell_size = Vector2( 512, 512 )
 cell_quadrant_size = 16
 cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 cell_half_offset = 2
@@ -24,7 +24,7 @@ collision_mask = 1
 occluder_light_mask = 1
 format = 1
 tile_data = PoolIntArray( 0, 2, 0, 2, 7, 0, 4, 7, 0, 6, 7, 0, 8, 7, 0, 10, 5, 0, 131072, 6, 0, 131082, 3, 0, 131084, 7, 0, 131086, 7, 0, 131088, 5, 0, 262144, 3, 0, 262146, 7, 0, 262148, 7, 0, 262150, 7, 0, 262152, 7, 0, 262154, 7, 0, 262156, 7, 0, 262158, 7, 0, 262160, 4, 0 )
-_sections_unfolded = [ "Transform" ]
+_sections_unfolded = [ "Cell", "Transform" ]
 
 [node name="Spawn" type="Node2D" parent="." index="1"]
 
