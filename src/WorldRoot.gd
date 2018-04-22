@@ -13,6 +13,8 @@ onready var spawn = $"Track_container/Track1/Spawn"
 
 onready var next_track_timer = $"Next_track_timer"
 
+onready var music_player = $"MusicPlayer"
+
 var current_track = 1
 onready var current_track_node = $"Track_container/Track1"
 var tracks = [preload("res://scenes/tracks/track01.tscn"), preload("res://scenes/tracks/track02.tscn")]
@@ -56,6 +58,8 @@ func load_track(track_number):
 	track.connect("tree_entered", self, "set_positions")
 	current_track_node = track
 	$Track_container.add_child(track)
+	
+	music_player.next_song()
 
 	reset()
 	
@@ -70,10 +74,14 @@ func _on_lap_did_start():
 	car.engine_running = true
 	dance.start()
 	
+	music_player.up_volume()
+	
 func _on_track_finished():
 	car.engine_running = false
 	next_track_timer.start()
 	dance.stop()
+	
+	music_player.lower_volume()
 	
 func _on_player_died():
 	set_positions()

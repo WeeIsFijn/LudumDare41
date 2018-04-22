@@ -2,7 +2,7 @@
 
 [ext_resource path="res://scenes/PowerUpManager.gd" type="Script" id=1]
 
-[node name="PowerUpManager" type="Node" index="0"]
+[node name="PowerUpManager" type="Node"]
 
 script = ExtResource( 1 )
 
