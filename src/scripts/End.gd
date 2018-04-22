@@ -4,18 +4,10 @@ signal clicked
 
 var is_shown = false
 
-func show_popup(lap_times, total_time):
-	$"lap-time1".set_text( str(lap_times[0]) )
-	$"lap-time2".set_text( str(lap_times[1]) )
-	$"lap-time3".set_text( str(lap_times[2]) )
-	
-	$"total-time".set_text( str(total_time) )
-	
+func show_end():
 	is_shown = true
-	
-	show()
-	
 	#$AnimationPlayer.play("slidein")
+	show()
 	
 func _input(event):
 	if is_shown and event.is_action_pressed("ui_click"):

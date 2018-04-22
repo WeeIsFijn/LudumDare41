@@ -1,0 +1,18 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Soulbringer_-_Neurometabolic_stimulation.ogg-3f1cc84b985e7cb1b6d31e725c4408ef.oggstr"
+
+[deps]
+
+source_file="res://assets/music/Soulbringer_-_Neurometabolic_stimulation.ogg"
+source_md5="0f791e93e89b765ffd5735f4d7d71b38"
+
+dest_files=[ "res://.import/Soulbringer_-_Neurometabolic_stimulation.ogg-3f1cc84b985e7cb1b6d31e725c4408ef.oggstr" ]
+dest_md5="13e3f2da9fa269f06840ef4bfce7315b"
+
+[params]
+
+loop=true
+loop_offset=0

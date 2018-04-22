@@ -58,6 +58,7 @@ func reset():
 	num_laps_done = 0
 	track_time = 0
 	lap_times = []
+	can_finish = false
 
 func _on_finish_crossed(body):
 	if can_finish:
@@ -70,6 +71,7 @@ func _on_finish_crossed(body):
 		if num_laps_done >= NUM_LAPS:
 			total_time += track_time
 			emit_signal("track_finished")
+			reset()
 		else:
 			emit_signal("lap_finished", num_laps_done + 1)
 	

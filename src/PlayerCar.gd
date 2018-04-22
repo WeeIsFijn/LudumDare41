@@ -121,4 +121,5 @@ func _on_powerup(multiplier):
 	self.powerup_multiplier = multiplier
 	
 func _on_track_finish():
+	velocity = Vector2()
 	emit_signal("stop_drift")
