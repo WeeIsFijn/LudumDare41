@@ -1,0 +1,18 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Soulbringer_-_Double_Psycore.ogg-477ab9d8438178de26ed0e4f0dd8386c.oggstr"
+
+[deps]
+
+source_file="res://assets/music/Soulbringer_-_Double_Psycore.ogg"
+source_md5="09e56302f1383b9f0782a44933c6741e"
+
+dest_files=[ "res://.import/Soulbringer_-_Double_Psycore.ogg-477ab9d8438178de26ed0e4f0dd8386c.oggstr" ]
+dest_md5="1859b3d8d5d76264e750d48ed3267618"
+
+[params]
+
+loop=true
+loop_offset=0

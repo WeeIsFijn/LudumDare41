@@ -1,0 +1,18 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Soulbringer_-_Corvalolum.ogg-6312ac73c5584f3132c01dc485b91cd5.oggstr"
+
+[deps]
+
+source_file="res://assets/music/Soulbringer_-_Corvalolum.ogg"
+source_md5="f00f43af3404d3f28d6cc7f604d7f15d"
+
+dest_files=[ "res://.import/Soulbringer_-_Corvalolum.ogg-6312ac73c5584f3132c01dc485b91cd5.oggstr" ]
+dest_md5="332c64de5565ccff6c13114c33afe858"
+
+[params]
+
+loop=true
+loop_offset=0

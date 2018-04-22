@@ -1,0 +1,18 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Soulbringer_-_Stupid_melodies.ogg-544a3f6772b968f8495bc7a551e17a60.oggstr"
+
+[deps]
+
+source_file="res://assets/music/Soulbringer_-_Stupid_melodies.ogg"
+source_md5="b1a7645f4c4dfe35beb579e897421ecb"
+
+dest_files=[ "res://.import/Soulbringer_-_Stupid_melodies.ogg-544a3f6772b968f8495bc7a551e17a60.oggstr" ]
+dest_md5="a0253c3169d39bb6916e3371c01bee23"
+
+[params]
+
+loop=true
+loop_offset=0
