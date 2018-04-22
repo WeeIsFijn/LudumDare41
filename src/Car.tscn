@@ -35,6 +35,7 @@ DRIFT_UNDERSTEER_FACTOR = 0.35
 
 [node name="ParticleManager" type="Node2D" parent="." index="0"]
 
+editor/display_folded = true
 script = ExtResource( 2 )
 _sections_unfolded = [ "Transform" ]
 
