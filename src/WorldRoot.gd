@@ -33,7 +33,7 @@ func _ready():
 	
 
 func _on_lap_did_start():
-	pass
+	car.engine_running = true
 
 func reset():
 	player.set_position(spawn.position)

@@ -3,6 +3,7 @@ extends KinematicBody2D
 var velocity = Vector2()
 var turning_time = 0
 var powerup_multiplier = 1
+var engine_running = false
 
 onready var area = $"Area2D"
 
@@ -25,6 +26,9 @@ func calculate_drag(acceleration):
 	return acceleration
 
 func _process(delta):
+	if !engine_running:
+		return
+
 	var acceleration = Vector2()
 	var rotation_velocity = 0
 	
