@@ -1,43 +1,166 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Road/road_asphalt01.png" type="Texture" id=1]
 [ext_resource path="res://Road/road_asphalt02.png" type="Texture" id=2]
 [ext_resource path="res://Road/road_asphalt03.png" type="Texture" id=3]
-[ext_resource path="res://Road/road_asphalt05.png" type="Texture" id=4]
+[ext_resource path="res://Road/road_asphalt39.png" type="Texture" id=4]
 [ext_resource path="res://Road/road_asphalt41.png" type="Texture" id=5]
-[ext_resource path="res://Road/road_asphalt39.png" type="Texture" id=6]
+[ext_resource path="res://Road/road_asphalt05.png" type="Texture" id=6]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 60, 64 )
 
 [node name="TileSetRoot" type="Node2D"]
 
-[node name="Asphalt_vertical" type="Sprite" parent="." index="0"]
+[node name="Asphalt_vertical" type="Area2D" parent="." index="0" groups=[
+"rode",
+]]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="Asphalt_vertical" type="Sprite" parent="Asphalt_vertical" index="0"]
 
 position = Vector2( 64, 64 )
 texture = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Asphalt_horizontal" type="Sprite" parent="." index="1"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Asphalt_vertical" index="1"]
+
+position = Vector2( 64, 64 )
+shape = SubResource( 1 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Asphalt_horizontal" type="Area2D" parent="." index="1" groups=[
+"rode",
+]]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="Asphalt_horizontal" type="Sprite" parent="Asphalt_horizontal" index="0"]
 
 position = Vector2( 320, 64 )
 texture = ExtResource( 2 )
 
-[node name="Asphalt_corner_topleft" type="Sprite" parent="." index="2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Asphalt_horizontal" index="1"]
 
-position = Vector2( 64, 320 )
+position = Vector2( 320, 65 )
+rotation = 1.5708
+shape = SubResource( 1 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Asphalt_corner_to_left" type="Area2D" parent="." index="2" groups=[
+"rode",
+]]
+
+position = Vector2( 70, 320 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="Asphalt_corner_topleft" type="Sprite" parent="Asphalt_corner_to_left" index="0"]
+
 texture = ExtResource( 3 )
+_sections_unfolded = [ "Transform" ]
 
-[node name="Asphalt_corner_topright" type="Sprite" parent="." index="3"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Asphalt_corner_to_left" index="1"]
 
-position = Vector2( 320, 320 )
+position = Vector2( -66, -319 )
+build_mode = 0
+polygon = PoolVector2Array( 130, 380, 130, 260, 70, 270, 20, 310, 0, 380 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Asphalt_corner_to_right" type="Area2D" parent="." index="3" groups=[
+"rode",
+]]
+
+position = Vector2( 70, 580 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="Asphalt_corner_bottomleft" type="Sprite" parent="Asphalt_corner_to_right" index="0"]
+
 texture = ExtResource( 4 )
+_sections_unfolded = [ "Transform" ]
 
-[node name="Asphalt_corner_bottomright" type="Sprite" parent="." index="4"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Asphalt_corner_to_right" index="1"]
+
+position = Vector2( -318.244, 67.4824 )
+rotation = 4.71239
+build_mode = 0
+polygon = PoolVector2Array( 130, 380, 130, 260, 70, 270, 20, 310, 0, 380 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Asphalt_corner_to_left3" type="Area2D" parent="." index="4" groups=[
+"rode",
+]]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="Asphalt_corner_bottomright" type="Sprite" parent="Asphalt_corner_to_left3" index="0"]
 
 position = Vector2( 320, 576 )
 texture = ExtResource( 5 )
 
-[node name="Asphalt_corner_bottomleft" type="Sprite" parent="." index="5"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Asphalt_corner_to_left3" index="1"]
 
-position = Vector2( 64, 576 )
+position = Vector2( 386.248, 892.678 )
+rotation = 3.14159
+build_mode = 0
+polygon = PoolVector2Array( 130, 380, 130, 260, 70, 270, 20, 310, 0, 380 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Asphalt_corner_to_left4" type="Area2D" parent="." index="5" groups=[
+"rode",
+]]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="Asphalt_corner_topright" type="Sprite" parent="Asphalt_corner_to_left4" index="0"]
+
+position = Vector2( 320, 320 )
 texture = ExtResource( 6 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Asphalt_corner_to_left4" index="1"]
+
+position = Vector2( 638.704, 252.723 )
+rotation = 1.5708
+build_mode = 0
+polygon = PoolVector2Array( 130, 380, 130, 260, 70, 270, 20, 310, 0, 380 )
+_sections_unfolded = [ "Transform" ]
 
 

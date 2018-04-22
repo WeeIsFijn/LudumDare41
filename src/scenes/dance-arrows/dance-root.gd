@@ -26,18 +26,17 @@ func proces_key_stroke(action):
 	return false
 
 func _input(event):
-	var processed = false
+	var processed = [false, false]
 	if Input.is_action_just_pressed("ui_right"):
-		processed = proces_key_stroke("ui_right")
+		processed = [true, proces_key_stroke("ui_right")]
 	elif Input.is_action_just_pressed("ui_left"):
-		processed = proces_key_stroke("ui_left")
+		processed = [true, proces_key_stroke("ui_left")]
 	elif Input.is_action_just_pressed("ui_up"):
-		processed = proces_key_stroke("ui_up")
+		processed = [true, proces_key_stroke("ui_up")]
 	elif Input.is_action_just_pressed("ui_down"):
-		processed = proces_key_stroke("ui_down")
+		processed = [true, proces_key_stroke("ui_down")]
 	
-	if event.is_pressed() and !Input.is_action_just_pressed("accelerate") and !Input.is_action_just_pressed("decelerate") and !Input.is_action_just_pressed("steer_left") and !Input.is_action_just_pressed("steer_right") and !processed:
-		print("wrong  input")
+	if processed[0] and not processed[1]:
 		emit_signal("wrong_input")
 		set_streak(0)
 		

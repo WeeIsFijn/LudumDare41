@@ -8,7 +8,9 @@
 custom_solver_bias = 0.0
 extents = Vector2( 14.8262, 25.0487 )
 
-[node name="CarRoot" type="KinematicBody2D"]
+[node name="CarRoot" type="KinematicBody2D" index="0" groups=[
+"player",
+]]
 
 input_pickable = false
 collision_layer = 1
@@ -30,14 +32,23 @@ DRIFT_UNDERSTEER_FACTOR = 0.35
 
 texture = ExtResource( 2 )
 
-[node name="KinematicBody2D" type="KinematicBody2D" parent="." index="1"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 
-input_pickable = false
-collision_layer = 1
-collision_mask = 1
-collision/safe_margin = 0.08
+position = Vector2( -0.392838, -0.15831 )
+scale = Vector2( 2.38, 2.58 )
+shape = SubResource( 1 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="2"]
+[node name="Area2D" type="Area2D" parent="." index="2"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D" index="0"]
 
 position = Vector2( -0.392838, -0.15831 )
 scale = Vector2( 2.38, 2.58 )
