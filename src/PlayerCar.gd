@@ -94,8 +94,6 @@ func _process(delta):
 		emit_signal("start_drift", 1 if effective_velocity.x > 0 else 0)
 		rotation_velocity *= DRIFT_ROTATION_FACTOR
 	
-	print(velocity.x)
-	
 	velocity.x = effective_velocity.x
 	
 	if (velocity.x != 0):
