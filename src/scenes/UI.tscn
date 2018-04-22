@@ -67,9 +67,9 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 327.0
+margin_left = 326.0
 margin_top = 19.0
-margin_right = 561.0
+margin_right = 560.0
 margin_bottom = 52.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -111,7 +111,57 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "custom_colors", "custom_fonts" ]
 
-[node name="lap-label" type="Label" parent="." index="2"]
+[node name="mult-label" type="Label" parent="." index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 185.0
+margin_top = 79.0
+margin_right = 433.0
+margin_bottom = 112.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 1, 0.67451, 0.929412, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "Dance Multiplier:"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_colors", "custom_fonts" ]
+
+[node name="mult-label-content" type="Label" parent="." index="3"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 444.0
+margin_top = 80.0
+margin_right = 678.0
+margin_bottom = 113.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 1, 0.67451, 0.929412, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "0"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_colors", "custom_fonts" ]
+
+[node name="lap-label" type="Label" parent="." index="4"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -136,7 +186,7 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "custom_fonts" ]
 
-[node name="lap-label-content" type="Label" parent="." index="3"]
+[node name="lap-label-content" type="Label" parent="." index="5"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -161,7 +211,7 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "custom_fonts" ]
 
-[node name="lap-time-label" type="Label" parent="." index="4"]
+[node name="lap-time-label" type="Label" parent="." index="6"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -186,7 +236,7 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "custom_fonts" ]
 
-[node name="lap-time-label-content-1" type="Label" parent="." index="5"]
+[node name="lap-time-label-content-1" type="Label" parent="." index="7"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -211,7 +261,7 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "custom_fonts" ]
 
-[node name="lap-time-label-content-2" type="Label" parent="." index="6"]
+[node name="lap-time-label-content-2" type="Label" parent="." index="8"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -234,7 +284,7 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "custom_fonts" ]
 
-[node name="lap-time-label-content-3" type="Label" parent="." index="7"]
+[node name="lap-time-label-content-3" type="Label" parent="." index="9"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -257,7 +307,7 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "custom_fonts" ]
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="8"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="10"]
 
 root_node = NodePath("..")
 autoplay = ""
@@ -267,7 +317,7 @@ playback_speed = 1.0
 anims/announcement = SubResource( 2 )
 blend_times = [  ]
 
-[node name="Node2D" type="Node2D" parent="." index="9"]
+[node name="Node2D" type="Node2D" parent="." index="11"]
 
 position = Vector2( 510.74, 115.192 )
 _sections_unfolded = [ "Transform" ]
@@ -301,9 +351,9 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="LapTimer" parent="." index="10" instance=ExtResource( 3 )]
+[node name="LapTimer" parent="." index="12" instance=ExtResource( 3 )]
 
-[node name="Sprite" type="Sprite" parent="." index="11"]
+[node name="Sprite" type="Sprite" parent="." index="13"]
 
 visible = false
 position = Vector2( 511.341, 524.252 )

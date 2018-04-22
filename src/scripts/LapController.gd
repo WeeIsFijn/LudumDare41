@@ -64,3 +64,6 @@ func _on_finish_crossed(body):
 	
 func _on_checkpoint_crossed(body):
 	can_finish = true
+	
+func _on_player_death():
+	can_finish = false

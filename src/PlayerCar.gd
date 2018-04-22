@@ -19,6 +19,12 @@ export (float) var DRIFT_ROTATION_FACTOR = 1.6
 export (float) var DRIFT_UNDERSTEER_FACTOR = 0.35
 
 signal died
+signal start_drift(direction)
+signal stop_drift
+
+func _ready():
+	connect("start_drift", $ParticleManager, "_on_drift")
+	connect("stop_drift", $ParticleManager, "_on_drift_stop")	
 
 func calculate_drag(acceleration):
 	if acceleration.y == 0 && velocity.y < -0.1:
@@ -59,6 +65,7 @@ func _process(delta):
 		elif velocity.x > ACCELERATION_DRAG_DRIFT * powerup_multiplier:
 			velocity.x -= ACCELERATION_DRAG_DRIFT * powerup_multiplier
 		else:
+			emit_signal("stop_drift")
 			velocity.x = 0
 
 	var effective_velocity = velocity
@@ -66,6 +73,7 @@ func _process(delta):
 	if (turning_time > 0.3):
 		effective_velocity.x = velocity.y * sin(DRIFT_UNDERSTEER_FACTOR / powerup_multiplier)
 		effective_velocity.y = velocity.y * cos(DRIFT_UNDERSTEER_FACTOR / powerup_multiplier)
+		emit_signal("start_drift", 1 if effective_velocity.x > 0 else 0)
 
 		rotation_velocity *= DRIFT_ROTATION_FACTOR
 	
@@ -80,7 +88,6 @@ func _process(delta):
 		if overlapper.is_in_group("rode"):
 			safe = true
 	if not safe:
-		# spawn explosie
 		emit_signal("died")
 		velocity = Vector2()
 		turning_time = 0
@@ -88,3 +95,6 @@ func _process(delta):
 	
 func _on_powerup(multiplier):
 	self.powerup_multiplier = multiplier
+	
+func _on_track_finish():
+	emit_signal("stop_drift")

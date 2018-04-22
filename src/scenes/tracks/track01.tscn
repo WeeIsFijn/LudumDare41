@@ -6,7 +6,7 @@
 
 [node name="Spawn" type="Node2D" parent="." index="0"]
 
-position = Vector2( 383.444, 2781.55 )
+position = Vector2( 375.634, 2434.79 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Finish" type="Node2D" parent="." index="1"]
@@ -15,7 +15,7 @@ position = Vector2( 403.204, 2391.63 )
 
 [node name="Checkpoint" type="Node2D" parent="." index="2"]
 
-position = Vector2( 3458.77, 2692.79 )
+position = Vector2( 3676.96, 2442.83 )
 
 [node name="TileMap" type="TileMap" parent="." index="3"]
 

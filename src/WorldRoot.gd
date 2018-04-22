@@ -34,12 +34,15 @@ func _ready():
 	LapController.connect("lap_did_start", self, "_on_lap_did_start")
 	LapController.connect("track_finished", self, "_on_track_finished")
 	
+	LapController.connect("track_finished", player, "_on_track_finish")
+	
 	powerup_manager.connect("powerup", ui, "_on_player_powerup")
 	powerup_manager.connect("powerup", player, "_on_powerup")
 	powerup_manager.connect("powerup", camera, "_on_player_powerup")
 	
 	player.connect("died", self, "_on_player_died")
 	player.connect("died", dance, "reset")
+	player.connect("died", LapController, "_on_player_death")
 	
 	next_track_timer.connect("timeout", self, "_on_next_track_timeout")
 
