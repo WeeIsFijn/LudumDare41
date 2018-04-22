@@ -101,7 +101,9 @@ func _process(delta):
 	rotate(rotation_velocity * delta)
 	
 	var safe = false
-	for overlapper in area.get_overlapping_areas():
+	print("overlapping")
+	print(str(area.get_overlapping_bodies()))
+	for overlapper in area.get_overlapping_bodies():
 		if overlapper.is_in_group("rode"):
 			safe = true
 	if not safe:
