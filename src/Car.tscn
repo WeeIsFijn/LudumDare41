@@ -13,7 +13,7 @@
 custom_solver_bias = 0.0
 extents = Vector2( 16.2524, 37.229 )
 
-[node name="CarRoot" type="KinematicBody2D" index="0" groups=[
+[node name="CarRoot" type="KinematicBody2D" groups=[
 "player",
 ]]
 
@@ -35,6 +35,7 @@ DRIFT_UNDERSTEER_FACTOR = 0.35
 
 [node name="ParticleManager" type="Node2D" parent="." index="0"]
 
+editor/display_folded = true
 script = ExtResource( 2 )
 _sections_unfolded = [ "Transform" ]
 
