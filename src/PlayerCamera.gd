@@ -1,17 +1,10 @@
 extends Camera2D
 
-# class member variables go here, for example:
-# var a = 2
-# var b = "textvar"
-var CarNode;
-
-func _ready():
-	# Called every time the node is added to the scene.
-	# Initialization here
-	pass
+const standard_zoom = 2.5
 
 func _process(delta):
-#	# Called every frame. Delta is time since last frame.
-#	# Update game logic here.
 	align()
-	pass
+
+func _on_player_powerup(power):
+	if power != 1 or zoom.x != 2.5:
+		$"CameraAnimation".play("Zoom" + str(power))
