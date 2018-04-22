@@ -2,7 +2,12 @@ extends Node
 
 signal powerup(power)
 
+onready var BoostAudio = $BoostAudio
+onready var LooseBoostAudio = $LooseBoostAudio
+
 var power = 0
+var previous_power = 0
+
 var state = {
 	0: {
 		"next": 5,
@@ -38,6 +43,11 @@ func _on_dance_arrow_streak_change(streak):
 	if streak == 0:
 		power = 0
 		emit_signal("powerup", state[power]["multiplier"])
+		if previous_power > 0:
+			LooseBoostAudio.play()
+		previous_power = 0
 	elif streak == state[power]["next"]:
+		previous_power = power
 		power += 1
+		BoostAudio.play()
 		emit_signal("powerup", state[power]["multiplier"])

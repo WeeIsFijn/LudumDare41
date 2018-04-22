@@ -145,16 +145,20 @@ script = ExtResource( 1 )
 
 [node name="LapController" parent="." index="1" instance=ExtResource( 3 )]
 
+editor/display_folded = true
+
 [node name="Track_container" type="Node2D" parent="." index="2"]
 
-scale = Vector2( 0.125, 0.125 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Track1" parent="Track_container" index="0" instance=ExtResource( 4 )]
 
+_sections_unfolded = [ "Transform" ]
+
 [node name="CarRoot" parent="." index="3" instance=ExtResource( 5 )]
 
 position = Vector2( 1588.8, 747.14 )
+_sections_unfolded = [ "Transform" ]
 MAX_SPEED = 1200
 ACCELERATION = 1500
 

@@ -7,6 +7,9 @@ signal wrong_input
 signal hit
 signal streak_change(streak)
 
+onready var HitSuccessAudio = $HitSuccess
+onready var HitNoSuccessAudio = $HitNoSuccess
+
 var streak = 0
 var arrows = []
 
@@ -21,6 +24,7 @@ func proces_key_stroke(action):
 			area.hit()
 			set_streak(streak + 1)
 			emit_signal("hit")
+			HitSuccessAudio.play()
 			return true
 	
 	return false
@@ -56,6 +60,7 @@ func _on_arrowtimer_timeout():
 	
 func _on_arrow_missed_arrow():
 	emit_signal("missed_arrow")
+	HitNoSuccessAudio.play()
 	set_streak(0)
 	
 func reset():

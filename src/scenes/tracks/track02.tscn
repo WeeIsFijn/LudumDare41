@@ -2,11 +2,11 @@
 
 [ext_resource path="res://TileSet.tres" type="TileSet" id=1]
 
-[node name="Track" type="Node2D"]
+[node name="Track" type="Node2D" index="0"]
 
 [node name="TileMap" type="TileMap" parent="." index="0"]
 
-scale = Vector2( 6, 6 )
+scale = Vector2( 0.75, 0.75 )
 mode = 0
 tile_set = ExtResource( 1 )
 cell_size = Vector2( 512, 512 )
@@ -23,12 +23,12 @@ collision_layer = 1
 collision_mask = 1
 occluder_light_mask = 1
 format = 1
-tile_data = PoolIntArray( 0, 2, 0, 2, 7, 0, 4, 7, 0, 6, 7, 0, 8, 7, 0, 10, 5, 0, 131072, 6, 0, 131082, 3, 0, 131084, 7, 0, 131086, 7, 0, 131088, 5, 0, 262144, 3, 0, 262146, 7, 0, 262148, 7, 0, 262150, 7, 0, 262152, 7, 0, 262154, 7, 0, 262156, 7, 0, 262158, 7, 0, 262160, 4, 0 )
+tile_data = PoolIntArray( -524288, 6, 0, -458752, 6, 0, -393216, 6, 0, -327680, 6, 0, -262144, 6, 0, -196608, 6, 0, -131072, 6, 0, -65536, 6, 0, 0, 6, 0, 131072, 6, 0, 262144, 3, 0 )
 _sections_unfolded = [ "Cell", "Transform" ]
 
 [node name="Spawn" type="Node2D" parent="." index="1"]
 
-position = Vector2( 391.692, 1480.79 )
+position = Vector2( 401.51, -176.69 )
 
 [node name="Finish" type="Node2D" parent="." index="2"]
 

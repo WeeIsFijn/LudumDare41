@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/skid.wav-e5479fe65bf999a6be4cda6a4f785a1f.sample"
+
+[deps]
+
+source_file="res://assets/sound/skid.wav"
+source_md5="53939469507c36a1a117e56c7c26a1c6"
+
+dest_files=[ "res://.import/skid.wav-e5479fe65bf999a6be4cda6a4f785a1f.sample" ]
+dest_md5="d84c5745b9f026dfbf6e1f4943db7467"
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

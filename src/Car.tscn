@@ -1,11 +1,14 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://PlayerCar.gd" type="Script" id=1]
 [ext_resource path="res://scripts/ParticleManager.gd" type="Script" id=2]
 [ext_resource path="res://scenes/DriftWheelParts.tscn" type="PackedScene" id=3]
 [ext_resource path="res://assets/imgs/Car.png" type="Texture" id=4]
+[ext_resource path="res://assets/sound/accelerate.wav" type="AudioStream" id=5]
+[ext_resource path="res://assets/sound/idle.wav" type="AudioStream" id=6]
+[ext_resource path="res://assets/sound/skid.wav" type="AudioStream" id=7]
 
-[sub_resource type="RectangleShape2D" id=6]
+[sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
 extents = Vector2( 17.9162, 37.229 )
@@ -55,9 +58,39 @@ texture = ExtResource( 4 )
 
 position = Vector2( 2.60716, 0.564041 )
 scale = Vector2( 2.38, 2.58 )
-shape = SubResource( 6 )
+shape = SubResource( 1 )
 
-[node name="Area2D" type="Area2D" parent="." index="3"]
+[node name="AccelerateAudio" type="AudioStreamPlayer2D" parent="." index="3"]
+
+stream = ExtResource( 5 )
+volume_db = 0.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+[node name="IdleAudio" type="AudioStreamPlayer2D" parent="." index="4"]
+
+stream = ExtResource( 6 )
+volume_db = -10.0
+autoplay = true
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+[node name="DriftAudio" type="AudioStreamPlayer2D" parent="." index="5"]
+
+stream = ExtResource( 7 )
+volume_db = 0.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+[node name="Area2D" type="Area2D" parent="." index="6"]
 
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
@@ -71,6 +104,6 @@ audio_bus_name = "Master"
 
 position = Vector2( 3.92754, 0.123909 )
 scale = Vector2( 2.38, 2.58 )
-shape = SubResource( 6 )
+shape = SubResource( 1 )
 
 

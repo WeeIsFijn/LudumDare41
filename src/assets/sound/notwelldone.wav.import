@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/notwelldone.wav-7c406f6af508c0be70c112684360df06.sample"
+
+[deps]
+
+source_file="res://assets/sound/notwelldone.wav"
+source_md5="e852b1d3a8d45cb5ad3ae11f7de71227"
+
+dest_files=[ "res://.import/notwelldone.wav-7c406f6af508c0be70c112684360df06.sample" ]
+dest_md5="527a4fbe8ce1fc82920a276afd87a2e6"
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0
