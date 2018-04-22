@@ -11,7 +11,7 @@
 custom_solver_bias = 0.0
 extents = Vector2( 16.2524, 37.229 )
 
-[node name="CarRoot" type="KinematicBody2D" index="0" groups=[
+[node name="CarRoot" type="KinematicBody2D" groups=[
 "player",
 ]]
 
@@ -36,6 +36,7 @@ DRIFT_UNDERSTEER_FACTOR = 0.35
 position = Vector2( 0.814629, 1.80944 )
 scale = Vector2( 0.18888, 0.199362 )
 texture = ExtResource( 2 )
+_sections_unfolded = [ "Transform" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 
