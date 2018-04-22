@@ -22,10 +22,10 @@ func _on_wrong_input():
 func _on_lap_will_start(inSeconds):
 	lapTimer.stop()
 	lapTimer.reset()
-	view_announcement(str(inSeconds))
+	view_announcement(str(inSeconds), Color(1,1,1))
 	
 func _on_lap_did_start():
-	view_announcement("GO")
+	view_announcement("GO", Color(1,1,1))
 	lapTimer.start()
 
 func _process(delta):
@@ -35,7 +35,7 @@ func _on_player_powerup(power):
 	if power != 1:
 		view_announcement("Dance Streak Multiplier: " + str(power) + "!!!", Color(0, 1, 0))
 	
-	$"streak-label-content".set_text("Dance Streak Multiplier: " + str(power))
+	$"mult-label-content".set_text(str(power))
 
 func _on_lap_finished(lap_number):
 	current_timer = lap_number

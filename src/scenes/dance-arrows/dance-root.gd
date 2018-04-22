@@ -68,7 +68,9 @@ func reset():
 	$"arrow_timer".start()
 	
 func remove_arrows():
-	for arrow in arrows:
+	var ar = arrows
+	arrows = []
+	for arrow in ar:
 		var wr = weakref(arrow);
 		if (wr.get_ref()):
 			arrow.queue_free()
