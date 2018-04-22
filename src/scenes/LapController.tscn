@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scripts/LapController.gd" type="Script" id=1]
+[ext_resource path="res://scenes/LapTimer.tscn" type="PackedScene" id=2]
+
+[node name="LapController" type="Node"]
+
+script = ExtResource( 1 )
+
+[node name="LapTimer" parent="." index="0" instance=ExtResource( 2 )]
+
+[node name="StartCountdownTimer" type="Timer" parent="." index="1"]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = true
+autostart = false
+
+

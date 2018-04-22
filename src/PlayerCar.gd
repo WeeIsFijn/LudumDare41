@@ -64,27 +64,25 @@ func _process(delta):
 	velocity.y = clamp(velocity.y, -1 * MAX_SPEED, MAX_SPEED_REVERSE);
 	
 	if (rotation_velocity == 0):
-		print("dragging x")
+
 		if velocity.x < -1 * ACCELERATION_DRAG_DRIFT:
 			velocity.x += ACCELERATION_DRAG_DRIFT
 		elif velocity.x > ACCELERATION_DRAG_DRIFT:
 			velocity.x -= ACCELERATION_DRAG_DRIFT
 		else:
 			velocity.x = 0
-		
-		print(velocity.x)
 
 	var effective_velocity = velocity
 	
 	if (turning_time > 0.3):
-		print("DRIFT")
+
 		effective_velocity.x = velocity.y * sin(DRIFT_UNDERSTEER_FACTOR)
 		effective_velocity.y = velocity.y * cos(DRIFT_UNDERSTEER_FACTOR)
 		rotation_velocity *= DRIFT_ROTATION_FACTOR
 	
 	velocity.x = effective_velocity.x
 	
-	print(turning_time)
+
 	#print(velocity)
 	
 	move_local_x(effective_velocity.x * delta)
