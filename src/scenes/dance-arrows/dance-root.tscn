@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://scenes/dance-arrows/dance-root.gd" type="Script" id=1]
 [ext_resource path="res://assets/imgs/dancedanceui.png" type="Texture" id=2]
 [ext_resource path="res://scenes/dance-arrows/target_area.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/sound/welldone.wav" type="AudioStream" id=4]
+[ext_resource path="res://assets/sound/notwelldone.wav" type="AudioStream" id=5]
 
 [node name="Dance-root" type="CanvasLayer"]
 
@@ -30,5 +32,21 @@ process_mode = 1
 wait_time = 1.0
 one_shot = false
 autostart = false
+
+[node name="HitSuccess" type="AudioStreamPlayer" parent="." index="3"]
+
+stream = ExtResource( 4 )
+volume_db = -1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="HitNoSuccess" type="AudioStreamPlayer" parent="." index="4"]
+
+stream = ExtResource( 5 )
+volume_db = -1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
 
 

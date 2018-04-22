@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/looseboost.wav-f71429b0d3fc4fcfe9be526280bc8257.sample"
+
+[deps]
+
+source_file="res://assets/sound/looseboost.wav"
+source_md5="3e4910f56ba2312c88cbfa68bfe1389b"
+
+dest_files=[ "res://.import/looseboost.wav-f71429b0d3fc4fcfe9be526280bc8257.sample" ]
+dest_md5="1bc1e0d6a80e042917622cee23d2c4ae"
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

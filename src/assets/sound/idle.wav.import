@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/idle.wav-9832a615a0ba8a1d94dd8779363c50d0.sample"
+
+[deps]
+
+source_file="res://assets/sound/idle.wav"
+source_md5="a0cc9f2e4755a84578afd73054b75d9a"
+
+dest_files=[ "res://.import/idle.wav-9832a615a0ba8a1d94dd8779363c50d0.sample" ]
+dest_md5="51f37f4b44833355e8627fb8e8dc7780"
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=true
+compress/mode=0

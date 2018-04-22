@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/GO.wav-7ab050e63d00d9a5c003f9233f1ca3be.sample"
+
+[deps]
+
+source_file="res://assets/sound/GO.wav"
+source_md5="f4678f2e432106f244614ad5cfb52cb5"
+
+dest_files=[ "res://.import/GO.wav-7ab050e63d00d9a5c003f9233f1ca3be.sample" ]
+dest_md5="46f0e8dc30ab5e534a09c65356a839ae"
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

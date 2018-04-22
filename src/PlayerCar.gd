@@ -6,6 +6,9 @@ var powerup_multiplier = 1
 var engine_running = false
 
 onready var area = $"Area2D"
+onready var AccelerateAudio = $AccelerateAudio
+onready var DriftAudio = $DriftAudio
+onready var IdleAudio = $IdleAudio
 
 export (int) var MAX_SPEED = 1200
 export (int) var MAX_SPEED_REVERSE = 500
@@ -20,6 +23,16 @@ export (float) var DRIFT_UNDERSTEER_FACTOR = 0.35
 
 signal died
 
+func stop_engine():
+	engine_running = false
+	AccelerateAudio.stop()
+	DriftAudio.stop()
+	IdleAudio.stop()
+
+func start_engine():
+	engine_running = true
+	IdleAudio.play()
+	
 func calculate_drag(acceleration):
 	if acceleration.y == 0 && velocity.y < -0.1:
 		acceleration.y += ACCELERATION_DRAG
@@ -42,6 +55,11 @@ func _process(delta):
 		turning_time = 0
 	if Input.is_action_pressed("accelerate"):
 		acceleration.y -= ACCELERATION * powerup_multiplier
+		if (!AccelerateAudio.playing):
+			AccelerateAudio.play()
+	if !Input.is_action_pressed("accelerate"):
+		if (AccelerateAudio.playing):
+			AccelerateAudio.stop()
 	if Input.is_action_pressed("decelerate"):
 		if velocity.y > 0:
 			acceleration.y += ACCELERATION_REVERSE * powerup_multiplier
@@ -66,10 +84,17 @@ func _process(delta):
 	if (turning_time > 0.3):
 		effective_velocity.x = velocity.y * sin(DRIFT_UNDERSTEER_FACTOR / powerup_multiplier)
 		effective_velocity.y = velocity.y * cos(DRIFT_UNDERSTEER_FACTOR / powerup_multiplier)
-
+		
 		rotation_velocity *= DRIFT_ROTATION_FACTOR
 	
 	velocity.x = effective_velocity.x
+	
+	if (velocity.x != 0):
+		if(!DriftAudio.playing):
+			DriftAudio.play()
+	else:
+		if(DriftAudio.playing):
+			DriftAudio.stop()
 
 	move_local_x(effective_velocity.x * delta)
 	move_local_y(effective_velocity.y * delta)

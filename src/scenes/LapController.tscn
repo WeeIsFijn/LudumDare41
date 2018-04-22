@@ -1,7 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://scripts/LapController.gd" type="Script" id=1]
 [ext_resource path="res://scenes/LapTimer.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/sound/countdown.wav" type="AudioStream" id=3]
+[ext_resource path="res://assets/sound/GO.wav" type="AudioStream" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -23,6 +25,7 @@ autostart = false
 
 [node name="Finish" type="Area2D" parent="." index="2"]
 
+editor/display_folded = true
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -37,6 +40,7 @@ shape = SubResource( 1 )
 
 [node name="Checkpoint" type="Area2D" parent="." index="3"]
 
+editor/display_folded = true
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -49,5 +53,21 @@ audio_bus_name = "Master"
 
 position = Vector2( 2.70752, 47.8325 )
 shape = SubResource( 1 )
+
+[node name="CountdownAudio" type="AudioStreamPlayer" parent="." index="4"]
+
+stream = ExtResource( 3 )
+volume_db = 0.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="GoAudio" type="AudioStreamPlayer" parent="." index="5"]
+
+stream = ExtResource( 4 )
+volume_db = 0.0
+autoplay = false
+mix_target = 0
+bus = "Master"
 
 

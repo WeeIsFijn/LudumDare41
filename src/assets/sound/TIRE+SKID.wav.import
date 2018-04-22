@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/TIRE+SKID.wav-f056d034e7e5b7ac240c050d7354ffff.sample"
+
+[deps]
+
+source_file="res://assets/sound/TIRE+SKID.wav"
+source_md5="cc16d16c24465d623ca739a8f04c1a5d"
+
+dest_files=[ "res://.import/TIRE+SKID.wav-f056d034e7e5b7ac240c050d7354ffff.sample" ]
+dest_md5="0748ea076ca3e8993c9fa9f592508f63"
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=true
+compress/mode=0

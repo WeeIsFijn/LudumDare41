@@ -71,13 +71,13 @@ func set_positions():
 	LapController.Checkpoint.set_position(get_node("Track_container/Track" + str(current_track) + "/Checkpoint").position)
 
 func _on_lap_did_start():
-	car.engine_running = true
+	car.start_engine()
 	dance.start()
 	
 	music_player.up_volume()
 	
 func _on_track_finished():
-	car.engine_running = false
+	car.stop_engine()
 	next_track_timer.start()
 	dance.stop()
 	

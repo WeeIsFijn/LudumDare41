@@ -10,6 +10,8 @@ onready var LapTimer = $LapTimer
 onready var StartCountdownTimer = $StartCountdownTimer
 onready var Finish = $Finish 
 onready var Checkpoint = $Checkpoint
+onready var CountdownAudio = $CountdownAudio
+onready var GoAudio = $GoAudio
 
 var startCountdownSecondsLeft = 3
 const NUM_LAPS = 3
@@ -28,15 +30,18 @@ func _on_timeout():
 	startCountdownSecondsLeft -= 1
 	if startCountdownSecondsLeft == 0:
 		start_lap()
+		GoAudio.play()
 	else:
 		emit_signal("lap_will_start", startCountdownSecondsLeft)
 		StartCountdownTimer.start()
+		CountdownAudio.play();
 
 func countdown_and_start_lap():
 	LapTimer.reset()
 	startCountdownSecondsLeft = 3
 	emit_signal("lap_will_start", startCountdownSecondsLeft)
 	StartCountdownTimer.start()
+	CountdownAudio.play();
 
 func start_lap():
 	LapTimer.start()
