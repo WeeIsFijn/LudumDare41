@@ -89,10 +89,12 @@ func _process(delta):
 	var effective_velocity = velocity
 	
 	if (turning_time > 0.3):
-		effective_velocity.x = velocity.y * sin(DRIFT_UNDERSTEER_FACTOR / powerup_multiplier)
-		effective_velocity.y = velocity.y * cos(DRIFT_UNDERSTEER_FACTOR / powerup_multiplier)
+		effective_velocity.x = velocity.y * sin(sign(rotation_velocity) * DRIFT_UNDERSTEER_FACTOR / powerup_multiplier)
+		effective_velocity.y = velocity.y * cos(sign(rotation_velocity) * DRIFT_UNDERSTEER_FACTOR / powerup_multiplier)
 		emit_signal("start_drift", 1 if effective_velocity.x > 0 else 0)
 		rotation_velocity *= DRIFT_ROTATION_FACTOR
+	
+	print(velocity.x)
 	
 	velocity.x = effective_velocity.x
 	
@@ -108,8 +110,6 @@ func _process(delta):
 	rotate(rotation_velocity * delta)
 	
 	var safe = false
-	print("overlapping")
-	print(str(area.get_overlapping_bodies()))
 	for overlapper in area.get_overlapping_bodies():
 		if overlapper.is_in_group("rode"):
 			safe = true
