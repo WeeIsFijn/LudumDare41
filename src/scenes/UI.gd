@@ -19,6 +19,8 @@ func _on_wrong_input():
 		view_announcement("Woops!", Color(1, 0, 0))
 
 func _on_lap_will_start(inSeconds):
+	lapTimer.stop()
+	lapTimer.reset()
 	view_announcement(str(inSeconds))
 	
 func _on_lap_did_start():

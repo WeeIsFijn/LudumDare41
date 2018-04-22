@@ -42,4 +42,5 @@ func reset():
 	ui._on_streak_change(0)
 	powerup_manager._on_dance_arrow_streak_change(0)
 	dance.streak = 0
+	LapController.stop_lap()
 	LapController.countdown_and_start_lap()
