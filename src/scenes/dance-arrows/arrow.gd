@@ -10,6 +10,7 @@ const DIRECTIONS = {
 export var SPEED = 180
 
 signal missed_arrow
+signal selfdestroy(arrow)
 
 var direction = 0
 var over_target = false
@@ -30,8 +31,9 @@ func init(direction, pos):
 func _process(delta):
 	set_position(position + Vector2(SPEED * delta, 0))
 	
-	# if position.x > environment.project_resolution.x:
-		# queue_free()
+	if position.x > environment.project_resolution.x:
+		emit_signal("selfdestroy", self)
+		queue_free()
 		
 	# If the arrow was over the target and now it is not, than the player missed the arrow
 	if over_target:
