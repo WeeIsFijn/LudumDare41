@@ -77,7 +77,6 @@ func _process(delta):
 	
 	var safe = false
 	for overlapper in area.get_overlapping_areas():
-		print(overlapper.get_groups())
 		if overlapper.is_in_group("rode"):
 			safe = true
 	if not safe:

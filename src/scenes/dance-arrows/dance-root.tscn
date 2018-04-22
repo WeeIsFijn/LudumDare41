@@ -22,6 +22,6 @@ _sections_unfolded = [ "Material", "Transform" ]
 process_mode = 1
 wait_time = 1.0
 one_shot = false
-autostart = true
+autostart = false
 
 

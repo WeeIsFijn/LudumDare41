@@ -8,7 +8,7 @@
 custom_solver_bias = 0.0
 extents = Vector2( 14.8262, 25.0487 )
 
-[node name="CarRoot" type="KinematicBody2D" index="0" groups=[
+[node name="CarRoot" type="KinematicBody2D" groups=[
 "player",
 ]]
 

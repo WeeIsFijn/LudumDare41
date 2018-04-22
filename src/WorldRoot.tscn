@@ -1,14 +1,13 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://WorldRoot.gd" type="Script" id=1]
-[ext_resource path="res://scenes/LapController.tscn" type="PackedScene" id=2]
-[ext_resource path="res://TileSet.tres" type="TileSet" id=3]
-[ext_resource path="res://Car.tscn" type="PackedScene" id=4]
-[ext_resource path="res://PlayerCamera.gd" type="Script" id=5]
-[ext_resource path="res://scenes/dance-arrows/dance-root.tscn" type="PackedScene" id=6]
-[ext_resource path="res://scenes/UI.tscn" type="PackedScene" id=7]
-[ext_resource path="res://scenes/PowerUpManager.tscn" type="PackedScene" id=8]
-[ext_resource path="res://scenes/spawn.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scenes/PowerUpManager.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/LapController.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/tracks/track01.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Car.tscn" type="PackedScene" id=5]
+[ext_resource path="res://PlayerCamera.gd" type="Script" id=6]
+[ext_resource path="res://scenes/dance-arrows/dance-root.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/UI.tscn" type="PackedScene" id=8]
 
 [sub_resource type="Animation" id=1]
 
@@ -141,35 +140,30 @@ tracks/0/keys = {
 
 script = ExtResource( 1 )
 
-[node name="LapController" parent="." index="0" instance=ExtResource( 2 )]
+[node name="PowerUpManager" parent="." index="0" instance=ExtResource( 2 )]
 
-[node name="TileMap" type="TileMap" parent="." index="1"]
-
-position = Vector2( 1539.69, 494.226 )
-scale = Vector2( 6, 6 )
-mode = 0
-tile_set = ExtResource( 3 )
-cell_size = Vector2( 64, 64 )
-cell_quadrant_size = 16
-cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-cell_half_offset = 2
-cell_tile_origin = 0
-cell_y_sort = false
-cell_clip_uv = false
-collision_use_kinematic = false
-collision_friction = 1.0
-collision_bounce = 0.0
-collision_layer = 1
-collision_mask = 1
-occluder_light_mask = 1
-format = 1
-tile_data = PoolIntArray( 65534, 2, 0, 0, -1610612736, 0, 2, -1610612736, 0, 4, -1610612736, 0, 6, -1610612734, 0, 196606, 0, 0, 131078, -1073741822, 0, 131080, -1610612736, 0, 131082, -1610612736, 0, 131084, -1610612734, 0, 327678, 0, 0, 262156, 0, 0, 458746, 2, 0, 458748, -1610612736, 0, 458750, 1610612738, 0, 393228, 0, 0, 458764, -1073741823, 0, 589818, -1073741823, 0, 655354, -1073741822, 0, 655356, -1610612736, 0, 655358, -1610612736, 0, 589824, 1, 0, 589826, 1, 0, 589828, 1, 0, 589830, 1, 0, 589832, 1, 0, 589834, 1, 0, 589836, -1610612731, 0 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="CarRoot" parent="." index="2" instance=ExtResource( 4 )]
+[node name="LapController" parent="." index="1" instance=ExtResource( 3 )]
 
 editor/display_folded = true
-position = Vector2( 1539.69, 494.226 )
+
+[node name="Finish" parent="LapController" index="2"]
+
+editor/display_folded = true
+position = Vector2( 1152.81, 2759.4 )
+
+[node name="Checkpoint" parent="LapController" index="3"]
+
+editor/display_folded = true
+position = Vector2( 1135.27, 2168.9 )
+
+[node name="Track_container" type="Node2D" parent="." index="2"]
+
+[node name="Track1" parent="Track_container" index="0" instance=ExtResource( 4 )]
+
+[node name="CarRoot" parent="." index="3" instance=ExtResource( 5 )]
+
+editor/display_folded = true
+position = Vector2( 1588.8, 747.14 )
 MAX_SPEED = 1200
 ACCELERATION = 1500
 
@@ -197,7 +191,7 @@ drag_margin_bottom = 0.0
 editor_draw_screen = true
 editor_draw_limits = true
 editor_draw_drag_margin = true
-script = ExtResource( 5 )
+script = ExtResource( 6 )
 _sections_unfolded = [ "Drag Margin", "Editor", "Limit", "Offset" ]
 
 [node name="CameraAnimation" type="AnimationPlayer" parent="CarRoot/Camera2D" index="0"]
@@ -216,32 +210,16 @@ anims/Zoom2 = SubResource( 6 )
 anims/Zoom2.5 = SubResource( 7 )
 blend_times = [  ]
 
-[node name="Dance-root" parent="CarRoot" index="4" instance=ExtResource( 6 )]
+[node name="Dance-root" parent="CarRoot" index="4" instance=ExtResource( 7 )]
 
-[node name="UI" parent="CarRoot" index="5" instance=ExtResource( 7 )]
+[node name="UI" parent="CarRoot" index="5" instance=ExtResource( 8 )]
 
-[node name="PowerUpManager" parent="." index="3" instance=ExtResource( 8 )]
+[node name="Next_track_timer" type="Timer" parent="." index="4"]
 
-[node name="Spawn" parent="." index="4" instance=ExtResource( 9 )]
-
-position = Vector2( 1140, 2810 )
-
-[node name="Area2D" type="Area2D" parent="." index="5" groups=[
-"rode",
-]]
-
-editor/display_folded = true
-input_pickable = true
-gravity_vec = Vector2( 0, 1 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
-audio_bus_override = false
-audio_bus_name = "Master"
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D" index="0"]
-
-build_mode = 0
-polygon = PoolVector2Array( 6880, 4030, 6870, 1850, 6690, 1450, 6220, 1270, 4550, 1280, 4500, 880, 4210, 580, 3870, 530, 1410, 520, 1160, 580, 930, 770, 800, 1080, 800, 2810, -150, 2840, -490, 2960, -700, 3260, -740, 4070, -690, 4340, -510, 4530, -230, 4670, -20, 4690, 6260, 4690, 6170, 4020, 50, 3990, -10, 3550, 940, 3540, 1240, 3420, 1450, 3170, 1510, 2940, 1510, 1220, 3830, 1240, 3890, 1500, 4050, 1800, 4350, 1970, 6130, 2000, 6140, 3890, 6300, 4640, 6630, 4550, 6840, 4260 )
+process_mode = 1
+wait_time = 2.0
+one_shot = true
+autostart = false
 
 
+[editable path="LapController"]

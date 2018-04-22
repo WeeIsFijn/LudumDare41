@@ -8,10 +8,10 @@ signal hit
 signal streak_change(streak)
 
 var streak = 0
+var arrows = []
 
 func _ready():
 	$"arrow_timer".connect("timeout", self, "_on_arrowtimer_timeout")
-	print(environment.project_resolution.x)
 	
 func proces_key_stroke(action):
 	var overlapping_areas = $"Target area".get_overlapping_areas()
@@ -48,11 +48,31 @@ func _on_arrowtimer_timeout():
 	var new_arrow = arrow_class.instance()
 	
 	# Initiate arrow
-	new_arrow.init(randi()%4, Vector2(-20,30))
+	new_arrow.init(randi()%4, Vector2(-5,30))
 	new_arrow.connect("missed_arrow", self, "_on_arrow_missed_arrow")
 	
+	arrows.append(new_arrow)
 	add_child(new_arrow)
 	
 func _on_arrow_missed_arrow():
 	emit_signal("missed_arrow")
 	set_streak(0)
+	
+func reset():
+	remove_arrows()
+	$"arrow_timer".start()
+	
+func remove_arrows():
+	for arrow in arrows:
+		var wr = weakref(arrow);
+		if (wr.get_ref()):
+			arrow.queue_free()
+	arrows = []
+	
+func stop():
+	remove_arrows()
+	$arrow_timer.stop()
+	
+func start():
+	set_streak(0)
+	$arrow_timer.start()
