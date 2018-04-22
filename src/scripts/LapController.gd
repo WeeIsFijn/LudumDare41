@@ -17,8 +17,10 @@ var startCountdownSecondsLeft = 3
 const NUM_LAPS = 3
 var num_laps_done = 0
 var can_finish = false
+var lap_times = []
 
 var total_time = 0
+var track_time = 0
 
 func _ready():
 	StartCountdownTimer.connect("timeout", self, "_on_timeout")
@@ -54,15 +56,19 @@ func stop_lap():
 	
 func reset():
 	num_laps_done = 0
+	track_time = 0
+	lap_times = []
 
 func _on_finish_crossed(body):
 	if can_finish:
 		can_finish = false
 		num_laps_done += 1
 		
-		total_time += LapTimer.value
+		track_time += LapTimer.value
+		lap_times.append(LapTimer.value)
 		
-		if num_laps_done >= 1:
+		if num_laps_done >= NUM_LAPS:
+			total_time += track_time
 			emit_signal("track_finished")
 		else:
 			emit_signal("lap_finished", num_laps_done + 1)

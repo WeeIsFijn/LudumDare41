@@ -38,6 +38,7 @@ func _on_player_powerup(power):
 	$"mult-label-content".set_text(str(power))
 
 func _on_lap_finished(lap_number):
+	get_node("lap-time-label-content-" + str(current_timer)).set("custom_colors/font_color", Color("ffaced"))
 	current_timer = lap_number
 	$"lap-label-content".set_text(str(lap_number) + " / 3")
 	lapTimer.reset()
