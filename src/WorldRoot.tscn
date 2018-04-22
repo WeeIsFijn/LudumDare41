@@ -137,7 +137,7 @@ tracks/0/keys = {
 "values": [ Vector2( 3.75, 3.75 ), Vector2( 4, 4 ) ]
 }
 
-[node name="WorldRoot" type="Node2D"]
+[node name="WorldRoot" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 
@@ -146,6 +146,14 @@ script = ExtResource( 1 )
 [node name="LapController" parent="." index="1" instance=ExtResource( 3 )]
 
 editor/display_folded = true
+
+[node name="Finish" parent="LapController" index="2"]
+
+position = Vector2( 1152.81, 2759.4 )
+
+[node name="Checkpoint" parent="LapController" index="3"]
+
+position = Vector2( 1135.27, 2168.9 )
 
 [node name="Track_container" type="Node2D" parent="." index="2"]
 
@@ -227,3 +235,4 @@ bus = "Master"
 script = ExtResource( 9 )
 
 
+[editable path="LapController"]

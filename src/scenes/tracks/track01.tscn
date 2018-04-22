@@ -6,7 +6,7 @@
 
 [node name="Spawn" type="Node2D" parent="." index="0"]
 
-position = Vector2( 375.634, 2434.79 )
+position = Vector2( 383.444, 2781.55 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Finish" type="Node2D" parent="." index="1"]
@@ -15,14 +15,16 @@ position = Vector2( 403.204, 2391.63 )
 
 [node name="Checkpoint" type="Node2D" parent="." index="2"]
 
-position = Vector2( 3676.96, 2442.83 )
+position = Vector2( 1911.07, 5716.44 )
 
-[node name="TileMap" type="TileMap" parent="." index="3"]
+[node name="TileMap" type="TileMap" parent="." index="3" groups=[
+"rode",
+]]
 
 scale = Vector2( 0.75, 0.75 )
 mode = 0
 tile_set = ExtResource( 1 )
-cell_size = Vector2( 512, 512 )
+cell_size = Vector2( 1024, 1024 )
 cell_quadrant_size = 16
 cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 cell_half_offset = 2
@@ -36,29 +38,7 @@ collision_layer = 1
 collision_mask = 1
 occluder_light_mask = 1
 format = 1
-tile_data = PoolIntArray( 0, 2, 0, 2, 7, 0, 4, 7, 0, 6, 7, 0, 8, 5, 0, 131072, 6, 0, 131080, 6, 0, 262144, 6, 0, 262152, 6, 0, 393216, 6, 0, 393224, 6, 0, 524288, 3, 0, 524290, 7, 0, 524292, 7, 0, 524294, 7, 0, 524296, 4, 0 )
+tile_data = PoolIntArray( -262144, 2, 0, -262143, 7, 0, -262142, 7, 0, -262141, 7, 0, -262140, 7, 0, -262139, 7, 0, -262138, 7, 0, -262137, 7, 0, -262136, 7, 0, -262135, 7, 0, -262134, 5, 0, -196608, 6, 0, -196598, 6, 0, -131072, 6, 0, -131070, 2, 0, -131069, 7, 0, -131068, 7, 0, -131067, 7, 0, -131066, 7, 0, -131065, 7, 0, -131064, 7, 0, -131063, 7, 0, -131062, 4, 0, -65536, 6, 0, -65534, 6, 0, 0, 6, 0, 2, 6, 0, 65536, 6, 0, 65538, 6, 0, 131072, 6, 0, 131074, 6, 0, 196608, 6, 0, 196610, 6, 0, 262144, 6, 0, 262146, 6, 0, 327680, 6, 0, 327682, 6, 0, 393216, 6, 0, 393218, 6, 0, 458752, 6, 0, 458754, 6, 0, 524288, 3, 0, 524289, 7, 0, 524290, 4, 0 )
 _sections_unfolded = [ "Cell", "Transform", "Visibility" ]
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Area2D" type="Area2D" parent="TileMap" index="0" groups=[
-"rode",
-]]
-
-input_pickable = true
-gravity_vec = Vector2( 0, 1 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
-audio_bus_override = false
-audio_bus_name = "Master"
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="TileMap/Area2D" index="0"]
-
-position = Vector2( -22.014, 10.1201 )
-scale = Vector2( 7.97926, 7.97927 )
-build_mode = 0
-polygon = PoolVector2Array( 0.397542, 518.74, 1.69442, 107.625, 17.2571, 53.1553, 62.6484, 15.5454, 111.93, 3.8734, 533.421, 2.5765, 582.703, 16.8423, 617.719, 49.2647, 637.172, 93.359, 637.172, 518.74, 624.203, 577.1, 598.265, 610.819, 529.53, 639.351, 93.7738, 638.054, 31.523, 604.335, 4.28821, 553.756, 130.087, 513.552, 508.78, 513.552, 511.373, 128.375, 126.196, 127.078, 127.493, 505.771, 0.397542, 542.084 )
 
 
