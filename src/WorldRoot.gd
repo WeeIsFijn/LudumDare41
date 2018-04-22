@@ -36,8 +36,10 @@ func _on_lap_did_start():
 	car.engine_running = true
 
 func reset():
+	car.engine_running = false
 	player.set_position(spawn.position)
 	player.set_rotation(spawn.rotation)
 	ui._on_streak_change(0)
 	powerup_manager._on_dance_arrow_streak_change(0)
 	dance.streak = 0
+	LapController.countdown_and_start_lap()
