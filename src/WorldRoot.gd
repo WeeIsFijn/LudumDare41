@@ -106,3 +106,7 @@ func reset():
 	dance.streak = 0
 	LapController.stop_lap()
 	LapController.countdown_and_start_lap()
+
+func _process(delta):
+	if Input.is_action_just_released("ui_back"):
+		get_tree().change_scene("res://scenes/MainMenu.tscn")
