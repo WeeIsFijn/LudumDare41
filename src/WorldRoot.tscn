@@ -168,6 +168,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="CarRoot" parent="." index="3" instance=ExtResource( 5 )]
 
+editor/display_folded = true
 position = Vector2( 1588.8, 747.14 )
 _sections_unfolded = [ "Transform" ]
 MAX_SPEED = 1400

@@ -1,0 +1,43 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://TileSet.tres" type="TileSet" id=1]
+
+[node name="Track" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="." index="0" groups=[
+"rode",
+]]
+
+scale = Vector2( 0.75, 0.75 )
+mode = 0
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 512, 512 )
+cell_quadrant_size = 16
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = false
+cell_clip_uv = false
+collision_use_kinematic = false
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 1
+collision_mask = 1
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray( -786446, 2, 0, -786444, 7, 0, -786442, 7, 0, -786440, 7, 0, -786438, 7, 0, -786436, 7, 0, -786434, 7, 0, -851968, 7, 0, -851966, 7, 0, -851964, 5, 0, -655374, 11, 0, -720892, 9, 0, -524302, 6, 0, -524298, 2, 0, -524296, 7, 0, -524294, 7, 0, -524292, 7, 0, -524290, 7, 0, -589824, 5, 0, -589820, 3, 0, -589818, 7, 0, -589816, 5, 0, -393230, 9, 0, -393226, 11, 0, -458752, 10, 0, -458744, 9, 0, -262158, 6, 0, -262154, 3, 0, -262152, 7, 0, -262150, 7, 0, -262148, 5, 0, -327680, 6, 0, -327674, 2, 0, -327672, 4, 0, -131086, 9, 0, -131076, 10, 0, -196608, 9, 0, -196604, 2, 0, -196602, 4, 0, -14, 3, 0, -12, 7, 0, -10, 7, 0, -8, 7, 0, -6, 7, 0, -4, 4, 0, -65536, 8, 0, -65532, 11, 0, 65536, 6, 0, 65540, 3, 0, 65542, 7, 0, 65544, 7, 0, 65546, 5, 0, 262142, 2, 0, 196608, 4, 0, 196618, 9, 0, 393212, 2, 0, 393214, 4, 0, 327690, 6, 0, 524284, 3, 0, 524286, 7, 0, 458752, 7, 0, 458754, 7, 0, 458756, 7, 0, 458758, 7, 0, 458760, 7, 0, 458762, 4, 0 )
+_sections_unfolded = [ "Cell", "Transform" ]
+
+[node name="Spawn" type="Node2D" parent="." index="1"]
+
+position = Vector2( 378.093, 327.829 )
+
+[node name="Finish" type="Node2D" parent="." index="2"]
+
+position = Vector2( 388.8, 13.0248 )
+
+[node name="Checkpoint" type="Node2D" parent="." index="3"]
+
+position = Vector2( 4197.88, 2257.15 )
+
+

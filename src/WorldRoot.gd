@@ -19,7 +19,12 @@ onready var popup = $"CarRoot/UI/Popup"
 
 var current_track = 1
 onready var current_track_node = $"Track_container/Track1"
-var tracks = [preload("res://scenes/tracks/track01.tscn"), preload("res://scenes/tracks/track02.tscn")]
+var tracks = [
+	preload("res://scenes/tracks/track01.tscn"),
+	preload("res://scenes/tracks/track02.tscn"),
+	preload("res://scenes/tracks/track03.tscn"),
+	preload("res://scenes/tracks/track04.tscn")
+]
 
 func _ready():
 	dance.connect("streak_change", ui, "_on_streak_change")
