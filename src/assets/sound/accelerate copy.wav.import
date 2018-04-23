@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/accelerate copy.wav-6dd8a9ca018cb4f9c9121897accec353.sample"
+
+[deps]
+
+source_file="res://assets/sound/accelerate copy.wav"
+source_md5="de1b8059785d3d349d8860c2ed5db019"
+
+dest_files=[ "res://.import/accelerate copy.wav-6dd8a9ca018cb4f9c9121897accec353.sample" ]
+dest_md5="7bce9e8c8143150a3113ac26d8fecc51"
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

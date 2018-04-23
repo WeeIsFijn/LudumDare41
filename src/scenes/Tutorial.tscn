@@ -1,0 +1,247 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://scripts/Tutorial.gd" type="Script" id=1]
+[ext_resource path="res://assets/imgs/tutorial.png" type="Texture" id=2]
+[ext_resource path="res://assets/fonts/Lightman Pixel.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://assets/imgs/wasd.png" type="Texture" id=4]
+[ext_resource path="res://assets/imgs/arrow_example.png" type="Texture" id=5]
+
+[sub_resource type="DynamicFont" id=1]
+
+size = 20
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 3 )
+_sections_unfolded = [ "Font", "Resource", "Settings" ]
+
+[sub_resource type="DynamicFont" id=2]
+
+size = 10
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 3 )
+_sections_unfolded = [ "Font", "Resource", "Settings" ]
+
+[sub_resource type="Animation" id=3]
+
+resource_name = "slidein"
+length = 0.25
+loop = false
+step = 0.25
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.25 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, -400 ), Vector2( 0, 0 ) ]
+}
+
+[node name="Tutorial" type="Node2D"]
+
+script = ExtResource( 1 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Sprite" type="Sprite" parent="." index="0"]
+
+position = Vector2( 193.924, 95.6764 )
+scale = Vector2( 0.499412, 0.296952 )
+texture = ExtResource( 2 )
+
+[node name="Title" type="Label" parent="." index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -19.0
+margin_top = 21.0
+margin_right = 412.0
+margin_bottom = 41.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 1 )
+text = "Tutorial"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="move-text" type="Label" parent="." index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 3.0
+margin_top = 113.0
+margin_right = 76.0
+margin_bottom = 124.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 1, 0.67451, 0.929412, 1 )
+text = "To Move"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_colors", "custom_fonts" ]
+
+[node name="Sprite2" type="Sprite" parent="." index="3"]
+
+position = Vector2( 40.4009, 75.6011 )
+scale = Vector2( 0.0815323, 0.0815323 )
+texture = ExtResource( 4 )
+
+[node name="arrow_example" type="Sprite" parent="." index="4"]
+
+position = Vector2( 170.134, 66.7383 )
+scale = Vector2( 0.114116, 0.114116 )
+texture = ExtResource( 5 )
+
+[node name="arrow_explenation" type="Label" parent="." index="5"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 84.0
+margin_top = 85.0
+margin_right = 255.0
+margin_bottom = 152.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 1, 0.67451, 0.929412, 1 )
+text = "Hit the arrow 
+keys at the right 
+time to get speed 
+and car control 
+multipliers"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_colors", "custom_fonts" ]
+
+[node name="dont fall" type="Label" parent="." index="6"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 242.0
+margin_top = 58.0
+margin_right = 413.0
+margin_bottom = 153.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 1, 0.67451, 0.929412, 1 )
+text = "Don't fall
+off the road
+the lap will
+RESET!
+( but not
+the whole
+track )"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_colors", "custom_fonts" ]
+
+[node name="click to advance" type="Label" parent="." index="7"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -23.0
+margin_top = 161.0
+margin_right = 405.0
+margin_bottom = 172.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0.347656, 0.347656, 0.347656, 1 )
+text = "Click to advance"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_colors", "custom_fonts" ]
+
+[node name="ColorRect" type="ColorRect" parent="." index="8"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 80.0
+margin_top = 48.0
+margin_right = 81.0
+margin_bottom = 157.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+color = Color( 1, 0.67451, 0.929412, 1 )
+
+[node name="ColorRect2" type="ColorRect" parent="." index="9"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 259.0
+margin_top = 48.0
+margin_right = 260.0
+margin_bottom = 154.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+color = Color( 1, 0.67451, 0.929412, 1 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="10"]
+
+root_node = NodePath("..")
+autoplay = ""
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+anims/slidein = SubResource( 3 )
+blend_times = [  ]
+
+

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/welldone.wav-56c7a44473d42cd1a96acc0b214b0e70.sample"
+
+[deps]
+
+source_file="res://assets/sound/welldone.wav"
+source_md5="a0512c22a03e40794ecdea066cd5d0af"
+
+dest_files=[ "res://.import/welldone.wav-56c7a44473d42cd1a96acc0b214b0e70.sample" ]
+dest_md5="b01c5461f49ea31c4e1eb8ab9c7835c4"
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

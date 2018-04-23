@@ -1,0 +1,18 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Soulbringer_-_End_of_the_universe.ogg-5ca36428a9d50a3c838dec3e092947f6.oggstr"
+
+[deps]
+
+source_file="res://assets/music/Soulbringer_-_End_of_the_universe.ogg"
+source_md5="04cd4c8d1038d777e10cb6729636554d"
+
+dest_files=[ "res://.import/Soulbringer_-_End_of_the_universe.ogg-5ca36428a9d50a3c838dec3e092947f6.oggstr" ]
+dest_md5="6622b24a6dc3de2c2806f5982a5095ff"
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,0 +1,110 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://PlayerCar.gd" type="Script" id=1]
+[ext_resource path="res://scripts/ParticleManager.gd" type="Script" id=2]
+[ext_resource path="res://scenes/DriftWheelParts.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/imgs/Car.png" type="Texture" id=4]
+[ext_resource path="res://assets/sound/accelerate.wav" type="AudioStream" id=5]
+[ext_resource path="res://assets/sound/idle.wav" type="AudioStream" id=6]
+[ext_resource path="res://assets/sound/skid.wav" type="AudioStream" id=7]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 16.2524, 37.229 )
+
+[node name="CarRoot" type="KinematicBody2D" index="0" groups=[
+"player",
+]]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+collision/safe_margin = 0.08
+script = ExtResource( 1 )
+MAX_SPEED = 300
+MAX_SPEED_REVERSE = 500
+ACCELERATION = 200
+ACCELERATION_BREAK = 500
+ACCELERATION_REVERSE = 300
+ACCELERATION_DRAG = 1300
+ACCELERATION_DRAG_DRIFT = 10
+INVERSE_ROTATION_RADIUS = 3.0
+DRIFT_ROTATION_FACTOR = 1.6
+DRIFT_UNDERSTEER_FACTOR = 0.35
+
+[node name="ParticleManager" type="Node2D" parent="." index="0"]
+
+editor/display_folded = true
+script = ExtResource( 2 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Particles2D" parent="ParticleManager" index="0" instance=ExtResource( 3 )]
+
+position = Vector2( -42.6923, 55.8961 )
+rotation = 3.14159
+_sections_unfolded = [ "Process Material", "Textures", "Time", "Transform" ]
+
+[node name="Particles2D2" parent="ParticleManager" index="1" instance=ExtResource( 3 )]
+
+position = Vector2( 49.2942, 54.5758 )
+
+[node name="Sprite" type="Sprite" parent="." index="1"]
+
+position = Vector2( 0.814629, 1.80944 )
+scale = Vector2( 0.18888, 0.199362 )
+texture = ExtResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="2"]
+
+position = Vector2( 2.60716, 0.564041 )
+scale = Vector2( 2.38, 2.58 )
+shape = SubResource( 1 )
+
+[node name="AccelerateAudio" type="AudioStreamPlayer2D" parent="." index="3"]
+
+stream = ExtResource( 5 )
+volume_db = 0.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+[node name="IdleAudio" type="AudioStreamPlayer2D" parent="." index="4"]
+
+stream = ExtResource( 6 )
+volume_db = -10.0
+autoplay = true
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+[node name="DriftAudio" type="AudioStreamPlayer2D" parent="." index="5"]
+
+stream = ExtResource( 7 )
+volume_db = 0.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+[node name="Area2D" type="Area2D" parent="." index="6"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
+
+position = Vector2( 3.92754, 0.123909 )
+scale = Vector2( 2.38, 2.58 )
+shape = SubResource( 1 )
+
+

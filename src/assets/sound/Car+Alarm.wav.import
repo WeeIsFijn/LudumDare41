@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Car+Alarm.wav-5bfa22de7cf5b179f985f5a01006c5e3.sample"
+
+[deps]
+
+source_file="res://assets/sound/Car+Alarm.wav"
+source_md5="0e31974227026643edea85cdefb608a6"
+
+dest_files=[ "res://.import/Car+Alarm.wav-5bfa22de7cf5b179f985f5a01006c5e3.sample" ]
+dest_md5="016b04b765ee10d6f820654faa064672"
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

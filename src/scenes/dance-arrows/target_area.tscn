@@ -1,0 +1,56 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://scenes/dance-arrows/target_area.gd" type="Script" id=1]
+[ext_resource path="res://assets/imgs/arrows/target.png" type="Texture" id=2]
+
+[sub_resource type="Shader" id=1]
+
+code = "shader_type canvas_item;
+
+void fragment(){
+	vec4 col = tex(TEXTURE,UV);
+	COLOR = col;	
+}"
+_sections_unfolded = [ "Resource" ]
+
+[sub_resource type="ShaderMaterial" id=2]
+
+render_priority = 0
+shader = SubResource( 1 )
+_sections_unfolded = [ "Resource" ]
+
+[sub_resource type="RectangleShape2D" id=3]
+
+custom_solver_bias = 0.0
+extents = Vector2( 19.9823, 19.9496 )
+
+[node name="Target area" type="Area2D" index="0" groups=[
+"arrow_target",
+]]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 1 )
+_sections_unfolded = [ "Material" ]
+
+[node name="Sprite" type="Sprite" parent="." index="0"]
+
+visible = false
+material = SubResource( 2 )
+position = Vector2( -0.0402126, 0.115982 )
+scale = Vector2( 0.265209, 0.265209 )
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Animation", "Material", "Offset", "Region", "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
+
+position = Vector2( -0.022625, 0.127293 )
+shape = SubResource( 3 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+

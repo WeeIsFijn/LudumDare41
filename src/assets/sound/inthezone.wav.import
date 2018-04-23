@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/inthezone.wav-81984f79e8015deeae456639f06a2643.sample"
+
+[deps]
+
+source_file="res://assets/sound/inthezone.wav"
+source_md5="df1211dfbea4ed517342cf52d4afc17a"
+
+dest_files=[ "res://.import/inthezone.wav-81984f79e8015deeae456639f06a2643.sample" ]
+dest_md5="b351642b2b023169b1296ebe457048e3"
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

@@ -1,0 +1,582 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://scripts/MainMenu.gd" type="Script" id=1]
+[ext_resource path="res://assets/imgs/background.png" type="Texture" id=2]
+[ext_resource path="res://assets/fonts/Lightman Pixel.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://assets/imgs/Car.png" type="Texture" id=4]
+[ext_resource path="res://assets/imgs/31206381_10215649958551017_2048179361256833024_n.png" type="Texture" id=5]
+[ext_resource path="res://assets/sound/countdown.wav" type="AudioStream" id=6]
+[ext_resource path="res://assets/music/Soulbringer_-_Bitcrusher.ogg" type="AudioStream" id=7]
+[ext_resource path="res://assets/imgs/popup.png" type="Texture" id=8]
+
+[sub_resource type="DynamicFont" id=1]
+
+size = 60
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 3 )
+_sections_unfolded = [ "Font", "Settings" ]
+
+[sub_resource type="Animation" id=2]
+
+resource_name = "SubTitleHover"
+length = 2.0
+loop = true
+step = 0.1
+tracks/0/type = "transform"
+tracks/0/path = NodePath("SubTitleHover/SubTitle:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = PoolRealArray( 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0 )
+tracks/1/type = "value"
+tracks/1/path = NodePath("SubTitleHover/SubTitle:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 130 ), Vector2( 0, 170 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("SubTitleHover/SubTitle:rect_rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0 ]
+}
+
+[sub_resource type="DynamicFont" id=3]
+
+size = 20
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 3 )
+_sections_unfolded = [ "Font", "Resource", "Settings" ]
+
+[sub_resource type="DynamicFont" id=4]
+
+size = 20
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 3 )
+_sections_unfolded = [ "Font", "Settings" ]
+
+[sub_resource type="DynamicFont" id=5]
+
+size = 20
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 3 )
+_sections_unfolded = [ "Font", "Settings" ]
+
+[sub_resource type="DynamicFont" id=6]
+
+size = 30
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 3 )
+_sections_unfolded = [ "Font", "Settings" ]
+
+[sub_resource type="DynamicFont" id=7]
+
+size = 15
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 3 )
+_sections_unfolded = [ "Font", "Resource", "Settings" ]
+
+[node name="Node" type="Node"]
+
+script = ExtResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="." index="0"]
+
+position = Vector2( 514.922, 515.653 )
+scale = Vector2( 0.50425, 0.50425 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Label" type="Label" parent="." index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 64.0
+margin_right = 1030.0
+margin_bottom = 124.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 1 )
+text = "Disco Death Race"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="SubTitleHover" type="AnimationPlayer" parent="." index="2"]
+
+root_node = NodePath("..")
+autoplay = "SubTitleHover"
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+anims/SubTitleHover = SubResource( 2 )
+blend_times = [  ]
+_sections_unfolded = [ "Pause", "Playback Options" ]
+
+[node name="SubTitle" type="Label" parent="SubTitleHover" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 132.562
+margin_right = 1079.0
+margin_bottom = 183.562
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0.996078, 0, 0.733333, 1 )
+text = "goa or die"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_colors", "custom_fonts" ]
+
+[node name="NewGameButton" type="MenuButton" parent="." index="3"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 580.0
+margin_top = 382.0
+margin_right = 1030.0
+margin_bottom = 408.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color_hover = Color( 0.996078, 0, 0.733333, 1 )
+toggle_mode = false
+action_mode = 0
+enabled_focus_mode = 0
+shortcut = null
+group = null
+text = "NEW GAME"
+flat = true
+align = 1
+items = [  ]
+_sections_unfolded = [ "Mouse", "custom_colors", "custom_fonts" ]
+
+[node name="Car" type="Sprite" parent="NewGameButton" index="1"]
+
+position = Vector2( -330.851, 23.6448 )
+rotation = 0.395057
+scale = Vector2( 0.257812, 0.257812 )
+texture = ExtResource( 4 )
+
+[node name="CreditsButton" type="MenuButton" parent="." index="4"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 573.0
+margin_top = 439.0
+margin_right = 1023.0
+margin_bottom = 465.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color_hover = Color( 0.996078, 0, 0.733333, 1 )
+toggle_mode = false
+action_mode = 0
+enabled_focus_mode = 0
+shortcut = null
+group = null
+text = "Credits"
+flat = true
+align = 1
+items = [  ]
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="ExitButton" type="MenuButton" parent="." index="5"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 573.0
+margin_top = 492.0
+margin_right = 1023.0
+margin_bottom = 518.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color_hover = Color( 0.996078, 0, 0.733333, 1 )
+toggle_mode = false
+action_mode = 0
+enabled_focus_mode = 0
+shortcut = null
+group = null
+text = "EXIT TO DESKTOP"
+flat = true
+align = 1
+items = [  ]
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="31206381_10215649958551017_2048179361256833024_n" type="Sprite" parent="." index="6"]
+
+position = Vector2( 800, 310 )
+scale = Vector2( 0.197266, 0.197266 )
+texture = ExtResource( 5 )
+
+[node name="MouseAudio" type="AudioStreamPlayer2D" parent="." index="7"]
+
+stream = ExtResource( 6 )
+volume_db = 0.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="8"]
+
+stream = ExtResource( 7 )
+volume_db = 0.0
+autoplay = true
+mix_target = 0
+bus = "Master"
+
+[node name="CreditsDialog" type="PopupDialog" parent="." index="9"]
+
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 40.0
+margin_bottom = 40.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+popup_exclusive = false
+_sections_unfolded = [ "Popup" ]
+
+[node name="Sprite" type="Sprite" parent="CreditsDialog" index="0"]
+
+position = Vector2( 520, 310 )
+texture = ExtResource( 8 )
+
+[node name="Label3" type="Label" parent="CreditsDialog" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 380.0
+margin_right = 1030.0
+margin_bottom = 431.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 5 )
+text = "Soulbringer"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="Label9" type="Label" parent="CreditsDialog" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 430.0
+margin_right = 1030.0
+margin_bottom = 481.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 5 )
+text = "Luther1000"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="Label8" type="Label" parent="CreditsDialog" index="3"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 190.0
+margin_right = 1030.0
+margin_bottom = 241.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 5 )
+text = "Sander Vanhove"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="Label6" type="Label" parent="CreditsDialog" index="4"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 250.0
+margin_right = 1030.0
+margin_bottom = 301.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 5 )
+text = "Wouter Deferme"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="disco" type="Label" parent="CreditsDialog" index="5"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 100.0
+margin_right = 1030.0
+margin_bottom = 151.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 6 )
+text = "Disco Death Race"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="Label4" type="Label" parent="CreditsDialog" index="6"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 66.0
+margin_right = 1030.0
+margin_bottom = 117.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 7 )
+custom_colors/font_color = Color( 0.951832, 0.119205, 1, 1 )
+text = "You're playing"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="Label5" type="Label" parent="CreditsDialog" index="7"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 139.0
+margin_right = 1030.0
+margin_bottom = 190.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 7 )
+custom_colors/font_color = Color( 0.951832, 0.119205, 1, 1 )
+text = "thanks to:"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="Label7" type="Label" parent="CreditsDialog" index="8"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 329.0
+margin_right = 1030.0
+margin_bottom = 380.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 7 )
+custom_colors/font_color = Color( 0.951832, 0.119205, 1, 1 )
+text = "Special shoutout to:"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="Label11" type="Label" parent="CreditsDialog" index="9"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 400.0
+margin_right = 1030.0
+margin_bottom = 451.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 7 )
+custom_colors/font_color = Color( 0.951832, 0.119205, 1, 1 )
+text = "Soundtrack (Attribution CC)"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="Label12" type="Label" parent="CreditsDialog" index="10"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 450.0
+margin_right = 1030.0
+margin_bottom = 501.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 7 )
+custom_colors/font_color = Color( 0.951832, 0.119205, 1, 1 )
+text = "Drawing the skull icon (Attribution cc)"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="Label10" type="Label" parent="CreditsDialog" index="11"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 530.0
+margin_right = 1030.0
+margin_bottom = 581.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 7 )
+custom_colors/font_color = Color( 0.449219, 0.449219, 0.449219, 1 )
+text = "Click Anywhere To Advance"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_colors", "custom_fonts" ]
+
+[connection signal="mouse_entered" from="NewGameButton" to="." method="_on_NewGameButton_mouse_entered"]
+
+[connection signal="pressed" from="NewGameButton" to="." method="_on_NewGameButton_pressed"]
+
+[connection signal="mouse_entered" from="CreditsButton" to="." method="_on_CreditsButton_mouse_entered"]
+
+[connection signal="pressed" from="CreditsButton" to="." method="_on_CreditsButton_pressed"]
+
+[connection signal="mouse_entered" from="ExitButton" to="." method="_on_ExitButton_mouse_entered"]
+
+[connection signal="pressed" from="ExitButton" to="." method="_on_ExitButton_pressed"]
+
+
