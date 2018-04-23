@@ -16,12 +16,17 @@ onready var next_track_timer = $"Next_track_timer"
 onready var music_player = $"MusicPlayer"
 
 onready var popup = $"CarRoot/UI/Popup"
+onready var tutorial = $"CarRoot/UI/Tutorial"
+onready var end = $"CarRoot/UI/End"
 
 var current_track = 1
+var loaded_track = 0
 onready var current_track_node = $"Track_container/Track1"
+
 var tracks = [
-	preload("res://scenes/tracks/track01.tscn"),
-	preload("res://scenes/tracks/track02.tscn"),
+	preload("res://scenes/tracks/track00.tscn"),
+	preload("res://scenes/tracks/track01.tscn"), 
+	preload("res://scenes/tracks/track02.tscn")]
 	preload("res://scenes/tracks/track03.tscn"),
 	preload("res://scenes/tracks/track04.tscn")
 ]
@@ -52,14 +57,24 @@ func _ready():
 	player.connect("died", LapController, "_on_player_death")
 	
 	popup.connect("clicked", self, "_on_popup_clicked")
+	tutorial.connect("clicked", self, "_on_tutorial_clicked")
+	end.connect("clicked", self, "_on_end_clicked")
 
-	reset()
+	#reset()
 	set_positions()
-	LapController.countdown_and_start_lap()
+	
+func _on_end_clicked():
+	# Go back to splashscreen
+	pass
+	
+func _on_tutorial_clicked():
+	reset()
 	
 func _on_popup_clicked():
-	current_track += 1
-	load_track(current_track)
+	if current_track <= 5:
+		load_track(current_track)
+	else:
+		end.show_end()
 	
 func load_track(track_number):
 	current_track_node.queue_free()
@@ -69,9 +84,13 @@ func load_track(track_number):
 	current_track_node = track
 	$Track_container.add_child(track)
 	
+	ui.reset()
+	LapController.reset()
+	
 	music_player.next_song()
 
 	reset()
+	LapController.countdown_and_start_lap()
 	
 func set_positions():
 	spawn = get_node("Track_container/Track" + str(current_track) + "/Spawn")
@@ -88,16 +107,16 @@ func _on_lap_did_start():
 	
 func _on_track_finished():
 	car.stop_engine()
+	current_track += 1
 	
 	popup.show_popup(LapController.lap_times, LapController.total_time)
 	
 	dance.stop()
-	
 	music_player.lower_volume()
 	
 func _on_player_died():
-	set_positions()
 	reset()
+	set_positions()
 
 func reset():
 	car.engine_running = false

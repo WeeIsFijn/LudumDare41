@@ -3,18 +3,17 @@ extends AudioStreamPlayer
 var music = []
 var current_song = 0
 
-func _ready():	
+func _ready():
+	load_music("assets/music/Soulbringer_-_Neurometabolic_stimulation.ogg")
 	load_music("assets/music/Soulbringer_-_Corvalolum.ogg")
-	stream = music[current_song]
-	play()
-	
 	load_music("assets/music/Soulbringer_-_Double_Psycore.ogg")
 	load_music("assets/music/Soulbringer_-_End_of_the_universe.ogg")
 	load_music("assets/music/Soulbringer_-_Space_Blockbuster.ogg")
 	load_music("assets/music/Soulbringer_-_Stupid_melodies.ogg")
 	
+	stream = music[current_song]
+	play()
 	lower_volume()
-	
 	
 func load_music(input_file):
 	var song = load(input_file)

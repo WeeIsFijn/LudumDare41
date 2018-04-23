@@ -1,16 +1,18 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://WorldRoot.gd" type="Script" id=1]
 [ext_resource path="res://scenes/PowerUpManager.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/LapController.tscn" type="PackedScene" id=3]
-[ext_resource path="res://scenes/tracks/track01.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/tracks/track00.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Car.tscn" type="PackedScene" id=5]
 [ext_resource path="res://PlayerCamera.gd" type="Script" id=6]
 [ext_resource path="res://scenes/dance-arrows/dance-root.tscn" type="PackedScene" id=7]
 [ext_resource path="res://scenes/UI.tscn" type="PackedScene" id=8]
 [ext_resource path="res://scenes/Popup.tscn" type="PackedScene" id=9]
-[ext_resource path="res://assets/imgs/background.png" type="Texture" id=10]
-[ext_resource path="res://scripts/AudioStreamPlayer.gd" type="Script" id=11]
+[ext_resource path="res://scenes/Tutorial.tscn" type="PackedScene" id=10]
+[ext_resource path="res://scenes/End.tscn" type="PackedScene" id=11]
+[ext_resource path="res://assets/imgs/background.png" type="Texture" id=12]
+[ext_resource path="res://scripts/AudioStreamPlayer.gd" type="Script" id=13]
 
 [sub_resource type="Animation" id=1]
 
@@ -159,12 +161,9 @@ position = Vector2( 1135.27, 2168.9 )
 
 [node name="Track_container" type="Node2D" parent="." index="2"]
 
-editor/display_folded = true
 _sections_unfolded = [ "Transform" ]
 
 [node name="Track1" parent="Track_container" index="0" instance=ExtResource( 4 )]
-
-_sections_unfolded = [ "Transform" ]
 
 [node name="CarRoot" parent="." index="3" instance=ExtResource( 5 )]
 
@@ -225,8 +224,19 @@ blend_times = [  ]
 [node name="Popup" parent="CarRoot/UI" index="14" instance=ExtResource( 9 )]
 
 visible = false
-position = Vector2( 112.368, 155.398 )
+position = Vector2( 123.472, 168.352 )
 scale = Vector2( 2.00332, 1.81759 )
+
+[node name="Tutorial" parent="CarRoot/UI" index="15" instance=ExtResource( 10 )]
+
+position = Vector2( 87.4613, 139.233 )
+scale = Vector2( 2.17171, 2.17171 )
+
+[node name="End" parent="CarRoot/UI" index="16" instance=ExtResource( 11 )]
+
+visible = false
+position = Vector2( 90.5421, 142.067 )
+scale = Vector2( 2.17967, 2.13448 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="CarRoot" index="10"]
 
@@ -240,23 +250,16 @@ transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 
 position = Vector2( 515.291, 385.879 )
 scale = Vector2( 0.506393, 0.506393 )
-texture = ExtResource( 10 )
+texture = ExtResource( 12 )
 
-[node name="Next_track_timer" type="Timer" parent="." index="4"]
-
-process_mode = 1
-wait_time = 2.0
-one_shot = true
-autostart = false
-
-[node name="MusicPlayer" type="AudioStreamPlayer" parent="." index="5"]
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="." index="4"]
 
 stream = null
 volume_db = 0.0
 autoplay = true
 mix_target = 0
 bus = "Master"
-script = ExtResource( 11 )
+script = ExtResource( 13 )
 
 
 [editable path="LapController"]
