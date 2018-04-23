@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://scripts/MainMenu.gd" type="Script" id=1]
 [ext_resource path="res://assets/imgs/background.png" type="Texture" id=2]
@@ -16,6 +16,44 @@ use_mipmaps = false
 use_filter = false
 font_data = ExtResource( 3 )
 _sections_unfolded = [ "Font", "Settings" ]
+
+[sub_resource type="Animation" id=7]
+
+resource_name = "SubTitleHover"
+length = 2.0
+loop = true
+step = 0.1
+tracks/0/type = "transform"
+tracks/0/path = NodePath("SubTitleHover/SubTitle:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = PoolRealArray( 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0 )
+tracks/1/type = "value"
+tracks/1/path = NodePath("SubTitleHover/SubTitle:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 130 ), Vector2( 0, 170 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("SubTitleHover/SubTitle:rect_rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0 ]
+}
 
 [sub_resource type="DynamicFont" id=2]
 
@@ -57,7 +95,7 @@ use_filter = false
 font_data = ExtResource( 3 )
 _sections_unfolded = [ "Font", "Resource", "Settings" ]
 
-[node name="Node" type="Node" index="0"]
+[node name="Node" type="Node"]
 
 script = ExtResource( 1 )
 
@@ -93,15 +131,26 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "custom_fonts" ]
 
-[node name="Label2" type="Label" parent="." index="2"]
+[node name="SubTitleHover" type="AnimationPlayer" parent="." index="2"]
+
+root_node = NodePath("..")
+autoplay = "SubTitleHover"
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+anims/SubTitleHover = SubResource( 7 )
+blend_times = [  ]
+_sections_unfolded = [ "Pause", "Playback Options" ]
+
+[node name="SubTitle" type="Label" parent="SubTitleHover" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 130.0
+margin_top = 132.562
 margin_right = 1079.0
-margin_bottom = 181.0
+margin_bottom = 183.562
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
