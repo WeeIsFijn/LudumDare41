@@ -52,6 +52,7 @@ func start_lap():
 
 func stop_lap():
 	LapTimer.stop()
+	LapTimer.reset()
 	emit_signal("lap_did_stop")
 	
 func reset():
@@ -72,9 +73,9 @@ func _on_finish_crossed(body):
 		if num_laps_done >= NUM_LAPS:
 			total_time += track_time
 			emit_signal("track_finished")
-			reset()
 		else:
 			emit_signal("lap_finished", num_laps_done + 1)
+			LapTimer.reset()
 	
 func _on_checkpoint_crossed(body):
 	can_finish = true
