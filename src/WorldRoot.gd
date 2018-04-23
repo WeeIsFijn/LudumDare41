@@ -26,7 +26,7 @@ onready var current_track_node = $"Track_container/Track1"
 var tracks = [
 	preload("res://scenes/tracks/track00.tscn"),
 	preload("res://scenes/tracks/track01.tscn"), 
-	preload("res://scenes/tracks/track02.tscn")]
+	preload("res://scenes/tracks/track02.tscn"),
 	preload("res://scenes/tracks/track03.tscn"),
 	preload("res://scenes/tracks/track04.tscn")
 ]
@@ -64,8 +64,7 @@ func _ready():
 	set_positions()
 	
 func _on_end_clicked():
-	# Go back to splashscreen
-	pass
+	get_tree().change_scene("res://scenes/MainMenu.tscn")
 	
 func _on_tutorial_clicked():
 	reset()

@@ -10,7 +10,7 @@ config_version=3
 
 [application]
 
-config/name="dance-arrows"
+config/name="Disco Death Race"
 run/main_scene="res://scenes/MainMenu.tscn"
 config/icon="res://icon.png"
 
