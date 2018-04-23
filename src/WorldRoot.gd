@@ -106,9 +106,9 @@ func _on_lap_did_start():
 	
 func _on_track_finished():
 	car.stop_engine()
-	current_track += 1
 	
-	popup.show_popup(LapController.lap_times, LapController.total_time)
+	popup.show_popup(LapController.lap_times, LapController.total_time, current_track)
+	current_track += 1
 	
 	dance.stop()
 	music_player.lower_volume()

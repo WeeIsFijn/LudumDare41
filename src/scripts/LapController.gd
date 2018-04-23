@@ -39,19 +39,20 @@ func _on_timeout():
 		CountdownAudio.play();
 
 func countdown_and_start_lap():
-	LapTimer.reset()
 	startCountdownSecondsLeft = 3
 	emit_signal("lap_will_start", startCountdownSecondsLeft)
 	StartCountdownTimer.start()
 	CountdownAudio.play();
 
 func start_lap():
+	LapTimer.reset()
 	LapTimer.start()
 	can_finish = false
 	emit_signal("lap_did_start")
 
 func stop_lap():
 	LapTimer.stop()
+	LapTimer.reset()
 	emit_signal("lap_did_stop")
 	
 func reset():
@@ -59,6 +60,7 @@ func reset():
 	track_time = 0
 	lap_times = []
 	can_finish = false
+	LapTimer.reset()
 
 func _on_finish_crossed(body):
 	if can_finish:
@@ -71,12 +73,14 @@ func _on_finish_crossed(body):
 		if num_laps_done >= NUM_LAPS:
 			total_time += track_time
 			emit_signal("track_finished")
-			reset()
 		else:
 			emit_signal("lap_finished", num_laps_done + 1)
+			LapTimer.reset()
 	
 func _on_checkpoint_crossed(body):
 	can_finish = true
 	
 func _on_player_death():
 	can_finish = false
+	LapTimer.stop()
+	LapTimer.reset()
