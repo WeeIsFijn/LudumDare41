@@ -10,7 +10,7 @@
 custom_solver_bias = 0.0
 extents = Vector2( 394.07, 10 )
 
-[node name="LapController" type="Node"]
+[node name="LapController" type="Node" index="0"]
 
 script = ExtResource( 1 )
 
